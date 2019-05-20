@@ -85,6 +85,8 @@
 
 [面试题12：矩阵中的路径](https://github.com/Einstellung/AlgorithmByPython/blob/master/Target%20Offer/%E7%9F%A9%E9%98%B5%E4%B8%AD%E7%9A%84%E8%B7%AF%E5%BE%84.py)：回溯法。任选一个格子作为路径的起点。假设矩阵中某个格子的字符为ch并且这个格子将对应于路径上的第i个字符。如果路径上的第i个字符不是ch，那么这个格子不可能处在路径上的第i个位置。如果路径上的第i个字符正好是ch，那么往相邻的格子寻找路径上的第i+1个字符。除在矩阵边界上的格子外，其他各自都有4个相邻的格子。重复这个过程直到路径上的所有字符都在矩阵中找到相应的位置。
 
+[面试题13：机器人的运动范围](https://github.com/Jack-Lee-Hiter/AlgorithmsByPython/blob/master/Target%20Offer/%E6%9C%BA%E5%99%A8%E4%BA%BA%E7%9A%84%E8%BF%90%E5%8A%A8%E8%8C%83%E5%9B%B4.py)：回溯法。类似于面试题12。把方格看成一个m*n的矩阵，从（0，0）开始移动。当准备进入坐标(i, j)是，通过检查坐标的数位来判断机器人能否进入。如果能进入的话，接着判断四个相邻的格子。
+
 [面试题10：二进制中1的个数](https://github.com/Jack-Lee-Hiter/AlgorithmsByPython/blob/master/Target%20Offer/%E4%BA%8C%E8%BF%9B%E5%88%B6%E4%B8%AD1%E7%9A%84%E4%B8%AA%E6%95%B0.py)：注意到每个**非零**整数n和n-1进行按位与运算，整数n的二进制数中最右边的1就会变成0，那么二进制数中的1的个数就会减少一个，因此可以利用一个循环，使得 n = n&(n-1) ，计算经过几次运算减少到0，就是有几个1。注意：书中给了另外两种方法，分别是原始n左移一位和右移一位的方法，因为Python不会出现整数溢出的情况，这里就不再考虑着两种方法。扩展：判断一个数值是不是2得整数次方，如果是的话，这个数的二进制数中有且只有一个1，那么这个数n会有 n&(n-1) == 0。或者求两个整数m和n需要改变m二进制中的多少位才能得到n，可以先做 m^n 的异或运算，然后求这个数中有多少个1。
 
 [面试题11：数值的整数次方](https://github.com/Jack-Lee-Hiter/AlgorithmsByPython/blob/master/Target%20Offer/%E6%95%B0%E5%80%BC%E7%9A%84%E6%95%B4%E6%95%B0%E6%AC%A1%E6%96%B9.py)：如果采用常规解法，需要注意的地方:当指数为负数的时候；当底数为零且指数为负数的情况；在判断底数base是不是等于0的时候,不能直接写base==0, 因为计算机内表示小数时有误差,只能判断他们的差的绝对值是不是在一个很小的范围内。如果采用递归解法，当n为偶数, a<sup>n</sup> = a<sup>n/2</sup> * a<sup>n/2</sup>，当n为奇数, a<sup>n</sup> = a<sup>(n-1)/2</sup> * a<sup>(n-1)/2</sup> * a，利用右移一位代替除2运算，利用 &1 判断是否为奇数。同时需要注意**递归终止条件**，exponent = 1的话，return base，exponent = -1的话，return 1.0/base。再次提醒！必须写成 1.0/base，否则 1/base，返回一个integer 0！
@@ -202,8 +204,6 @@
 [面试题65：滑动窗口的最大值](https://github.com/Jack-Lee-Hiter/AlgorithmsByPython/blob/master/Target%20Offer/%E6%BB%91%E5%8A%A8%E7%AA%97%E5%8F%A3%E7%9A%84%E6%9C%80%E5%A4%A7%E5%80%BC.py)：我们把可能成为滑动窗口的最大值的数值下标存入一个两端开口的队列index中。首先遍历输入数组，在遍历次数小于窗口长度的时候，如果index数组里面含有元素而且元素后面的下标值对应的输入数组的数如果小于当前遍历到的输入数组元素值，那么就把尾部的元素下标值不断pop出来，再压入当前输入元素对应的下标值。然后再从等于滑动窗口大小的位置继续遍历输入数组。首先把index数组的头元素下标值对应输入数组值压入输出数组。同样的，如果index数组里面含有元素而且元素后面的下标值对应的输入数组的数如果小于当前遍历到的输入数组元素值，那么就把尾部的元素下标值不断pop出来，同时，如果index数组内有元素，而且当一个数字的下标与当前处理的数字的下标只差大于或等于滑动窗口的大小时，这个数字已经从窗口中画出，可以从队列中删除了，再压入当前输入元素对应的下标值。**最后还需要在输出数组中append一下index手元素下标对应的输入元素值**。
 
 
-
-[面试题67：机器人的运动范围](https://github.com/Jack-Lee-Hiter/AlgorithmsByPython/blob/master/Target%20Offer/%E6%9C%BA%E5%99%A8%E4%BA%BA%E7%9A%84%E8%BF%90%E5%8A%A8%E8%8C%83%E5%9B%B4.py)：回溯法。类似于面试题66。把方格看成一个m*n的矩阵，从（0，0）开始移动。当准备进入坐标(i, j)是，通过检查坐标的数位来判断机器人能否进入。如果能进入的话，接着判断四个相邻的格子。
 
 [面试题补充：三元组实现稀疏矩阵相乘](https://github.com/Jack-Lee-Hiter/AlgorithmsByPython/blob/master/Target%20Offer/multiSparse.py)
 
