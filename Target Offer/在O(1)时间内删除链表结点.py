@@ -14,21 +14,27 @@ class Solution:
         if not pListHead or not pToBeDeleted:
             return None
 
+        # 要删除的节点不是尾节点
         if pToBeDeleted.next != None:
             pNext = pToBeDeleted.next
-            pToBeDeleted.val = pNext.val
-            pToBeDeleted.next = pNext.next
-            pNext.__del__()
+            pToBeDeleted.val = pNext.val     # 要删除节点内容被后一个节点内容覆盖
+            pToBeDeleted.next = pNext.next   # 要删除节点指针指向后一个节点的后一个节点
+            pNext.__del__()                  # 删除后一个节点
 
-
+        # 链表只有一个节点，删除头结点(也是尾节点)
         elif pListHead == pToBeDeleted:
             pToBeDeleted.__del__()
             pListHead.__del__()
+
+        # 链表中要删除的节点为尾节点时，删除尾节点
+        # 之所以要分开来的原因在于尾节点之后没有节点，所以不能按照第一种情况进行操作  
         else:
             pNode = pListHead
             while pNode.next != pToBeDeleted:
                 pNode = pNode.next
-            pNode.next = None
+            # 之所以要遍历的原因在于不知道尾节点的前一个节点是什么
+            # 单向链表没有办法向前找，所以要遍历完最后next为None    
+            pNode.next = None              
             pToBeDeleted.__del__()
 
 
