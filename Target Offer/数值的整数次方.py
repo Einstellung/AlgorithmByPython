@@ -16,20 +16,44 @@
 利用位与运算代替了求余运算法%来判断一个数是奇数还是偶数
 优化代码速度
 '''
+
+import math
+
 class Solution:
     def Power(self, base, exponent):
+        # 特殊情况，对于底数为0并且指数<0的考虑
+        # 对0求倒数并运算会出错
+        if math.isclose(base, 0.0) and exponent < 0:
+            return 0
+        
+        result = self.PowerWithUnsignedExponent(base, abs(exponent))
+        
+        # 如果指数项为0，就将其翻转
+        if exponent < 0:
+            result = 1 / result
+            
+        return result
+                        
+    
+    # 定义相应的位运算操作，通过递归来算
+    def PowerWithUnsignedExponent(self, base, exponent):
         if exponent == 0:
             return 1
         if exponent == 1:
             return base
-        if exponent == -1:
-            return 1/base
-
-        result = self.Power(base, exponent >> 1)
+        
+        # 右移运算符作为除法运算
+        result = self.PowerWithUnsignedExponent(base, exponent >> 1)
         result *= result
-        if (exponent & 0x1) == 1:
+        
+        # 查看最后递归到底的exponent是不是奇数1,如果是奇数1就将其变成base
+        if(exponent & 0x01 == 1):
             result *= base
+            
         return result
 
 S = Solution()
-print(S.Power(5, -10))
+print(S.Power(2, -2))
+
+S = Solution()
+print(S.Power(2, 2))
