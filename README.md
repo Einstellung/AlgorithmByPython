@@ -97,7 +97,7 @@
 [面试题17：打印1到最大的n位数](https://github.com/Jack-Lee-Hiter/AlgorithmsByPython/blob/master/Target%20Offer/%E6%89%93%E5%8D%B01%E5%88%B0%E6%9C%80%E5%A4%A7%E7%9A%84n%E4%BD%8D%E6%95%B0.py)：该题的要点是注意输入的n位数是否会导致溢出，因此利用字符串模拟整数的加法。**注意**：在打印函数中，需要判断打印的数字是否是以0开头的，同时判断条件是 num[i] != "0"，不能写作 num[i] != 0，因为是使用str类型的，后面一种写法导致判断无法成功。
 
 面试题18：删除链表的节点：
-[题目一：在O(1)时间删除链表结点](https://github.com/Einstellung/AlgorithmByPython/blob/master/Target%20Offer/%E5%9C%A8O%281%29%E6%97%B6%E9%97%B4%E5%86%85%E5%88%A0%E9%99%A4%E9%93%BE%E8%A1%A8%E7%BB%93%E7%82%B9.py)：当要删除的结点不是尾结点而且不是仅有一个结点的头结点，可以把该结点i的下一个结点j的内容复制到结点i，同时把i结点的next指向j结点的next，然后再删除结点j。如果要删除的链表为单结点链表且待删除的结点就是头结点，需要把头结点置为None，如果删除的结点为链表的尾结点，那么就需要顺序遍历链表，找到尾节点前面一个结点，然后将其next置空。
+ [题目一：在O(1)时间删除链表结点](https://github.com/Einstellung/AlgorithmByPython/blob/master/Target%20Offer/%E5%9C%A8O%281%29%E6%97%B6%E9%97%B4%E5%86%85%E5%88%A0%E9%99%A4%E9%93%BE%E8%A1%A8%E7%BB%93%E7%82%B9.py)：当要删除的结点不是尾结点而且不是仅有一个结点的头结点，可以把该结点i的下一个结点j的内容复制到结点i，同时把i结点的next指向j结点的next，然后再删除结点j。如果要删除的链表为单结点链表且待删除的结点就是头结点，需要把头结点置为None，如果删除的结点为链表的尾结点，那么就需要顺序遍历链表，找到尾节点前面一个结点，然后将其next置空。
 
 [面试题14：调整数组顺序使奇数位于偶数前面](https://github.com/Jack-Lee-Hiter/AlgorithmsByPython/blob/master/Target%20Offer/%E8%B0%83%E6%95%B4%E6%95%B0%E7%BB%84%E9%A1%BA%E5%BA%8F%E4%BD%BF%E5%A5%87%E6%95%B0%E4%BD%8D%E4%BA%8E%E5%81%B6%E6%95%B0%E5%89%8D%E9%9D%A2.py)：注重函数的扩展性能。把函数中的判断条件写成一个判断条件的函数，方便与函数的扩展。对于奇数位于偶数前面的情况，类似于快排，在头和尾分别设置一个指针，头指针指向奇数则后移，尾指针指向偶数则前移。
 
