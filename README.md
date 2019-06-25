@@ -97,7 +97,8 @@
 [面试题17：打印1到最大的n位数](https://github.com/Jack-Lee-Hiter/AlgorithmsByPython/blob/master/Target%20Offer/%E6%89%93%E5%8D%B01%E5%88%B0%E6%9C%80%E5%A4%A7%E7%9A%84n%E4%BD%8D%E6%95%B0.py)：该题的要点是注意输入的n位数是否会导致溢出，因此利用字符串模拟整数的加法。**注意**：在打印函数中，需要判断打印的数字是否是以0开头的，同时判断条件是 num[i] != "0"，不能写作 num[i] != 0，因为是使用str类型的，后面一种写法导致判断无法成功。
 
 面试题18：删除链表的节点：  
-[题目一：在O(1)时间删除链表结点](https://github.com/Einstellung/AlgorithmByPython/blob/master/Target%20Offer/%E5%9C%A8O%281%29%E6%97%B6%E9%97%B4%E5%86%85%E5%88%A0%E9%99%A4%E9%93%BE%E8%A1%A8%E7%BB%93%E7%82%B9.py)：当要删除的结点不是尾结点而且不是仅有一个结点的头结点，可以把该结点i的下一个结点j的内容复制到结点i，同时把i结点的next指向j结点的next，然后再删除结点j。如果要删除的链表为单结点链表且待删除的结点就是头结点，需要把头结点置为None，如果删除的结点为链表的尾结点，那么就需要顺序遍历链表，找到尾节点前面一个结点，然后将其next置空。
+[题目一：在O(1)时间删除链表结点](https://github.com/Einstellung/AlgorithmByPython/blob/master/Target%20Offer/%E5%9C%A8O%281%29%E6%97%B6%E9%97%B4%E5%86%85%E5%88%A0%E9%99%A4%E9%93%BE%E8%A1%A8%E7%BB%93%E7%82%B9.py)：当要删除的结点不是尾结点而且不是仅有一个结点的头结点，可以把该结点i的下一个结点j的内容复制到结点i，同时把i结点的next指向j结点的next，然后再删除结点j。如果要删除的链表为单结点链表且待删除的结点就是头结点，需要把头结点置为None，如果删除的结点为链表的尾结点，那么就需要顺序遍历链表，找到尾节点前面一个结点，然后将其next置空。  
+[题目二：删除链表中重复的结点](https://github.com/Jack-Lee-Hiter/AlgorithmsByPython/blob/master/Target%20Offer/%E5%88%A0%E9%99%A4%E9%93%BE%E8%A1%A8%E4%B8%AD%E9%87%8D%E5%A4%8D%E7%9A%84%E7%BB%93%E7%82%B9.py)：我们需要设置一个指针preNode，preNode最开始为None，然后设置两个指针，pNode指向当前节点，pNext指向pNode下一个结点，⓵如果pNext不为空而且pNext的值等于pNode的值，那么就说明出现了重复数字的结点，就需要删除，然后从pNode开始遍历，如果结点值等于前面那个重复值，继续遍历。当遍历到None或者不同值结点的时候，这时候需要判断preNode结点，如果preNode结点为None，就说明我们刚才的重复结点是从整个链表的头结点开始重复的，就直接把pHead设置为当前结点，pNode也设置为当前结点。反之，如果preNode不为None，直接把preNode的下一个指针指向当前节点，pNode指向preNode即可；⓶如果pNext为空或者pNext的值不等于pNode的值，说明当前的这个pNode和后面的值不重复，直接令preNode = pNode，pNode指向下一个结点即可。
 
 [面试题14：调整数组顺序使奇数位于偶数前面](https://github.com/Jack-Lee-Hiter/AlgorithmsByPython/blob/master/Target%20Offer/%E8%B0%83%E6%95%B4%E6%95%B0%E7%BB%84%E9%A1%BA%E5%BA%8F%E4%BD%BF%E5%A5%87%E6%95%B0%E4%BD%8D%E4%BA%8E%E5%81%B6%E6%95%B0%E5%89%8D%E9%9D%A2.py)：注重函数的扩展性能。把函数中的判断条件写成一个判断条件的函数，方便与函数的扩展。对于奇数位于偶数前面的情况，类似于快排，在头和尾分别设置一个指针，头指针指向奇数则后移，尾指针指向偶数则前移。
 
@@ -191,7 +192,6 @@
 
 [面试题56：链表中环的入口结点](https://github.com/Jack-Lee-Hiter/AlgorithmsByPython/blob/master/Target%20Offer/%E9%93%BE%E8%A1%A8%E4%B8%AD%E7%8E%AF%E7%9A%84%E5%85%A5%E5%8F%A3%E7%BB%93%E7%82%B9.py)：寻找链表中环的入口结点主要分成三个步骤：首先是设置两个快慢指针，如果快慢指针相遇，则快慢指针必然都在环中；然后从相遇的地方设置一个指针向后遍历并记录走的步数，当这个指针重新指到开始的位置的时候，当前对应的步数就是环中结点的数量k；然后设置两个指针从链表开始，第一个节点先走k步，然后第二个指针指到链表的开始，两个指针每次都向后走一步，两个指针相遇的位置就是链表的入口。
 
-[面试题57：删除链表中重复的结点](https://github.com/Jack-Lee-Hiter/AlgorithmsByPython/blob/master/Target%20Offer/%E5%88%A0%E9%99%A4%E9%93%BE%E8%A1%A8%E4%B8%AD%E9%87%8D%E5%A4%8D%E7%9A%84%E7%BB%93%E7%82%B9.py)：我们需要设置一个指针preNode，preNode最开始为None，然后设置两个指针，pNode指向当前节点，pNext指向pNode下一个结点，⓵如果pNext不为空而且pNext的值等于pNode的值，那么就说明出现了重复数字的结点，就需要删除，然后从pNode开始遍历，如果结点值等于前面那个重复值，继续遍历。当遍历到None或者不同值结点的时候，这时候需要判断preNode结点，如果preNode结点为None，就说明我们刚才的重复结点是从整个链表的头结点开始重复的，就直接把pHead设置为当前结点，pNode也设置为当前结点。反之，如果preNode不为None，直接把preNode的下一个指针指向当前节点，pNode指向preNode即可；⓶如果pNext为空或者pNext的值不等于pNode的值，说明当前的这个pNode和后面的值不重复，直接令preNode = pNode，pNode指向下一个结点即可。
 
 [面试题59：对称的二叉树](https://github.com/Jack-Lee-Hiter/AlgorithmsByPython/blob/master/Target%20Offer/%E5%AF%B9%E7%A7%B0%E7%9A%84%E4%BA%8C%E5%8F%89%E6%A0%91.py)：分为递归和非递归的两种方式，思想是一样的。主要就是把叶子节点的None节点也加入到遍历当中。按照前序遍历二叉树，存入一个序列中。然后按照和前序遍历对应的先父节点，然后右子节点，最后左子节点遍历二叉树，存入一个序列。如果前后两个序列相等，那么说明二叉树是对称的。
 
