@@ -104,7 +104,7 @@
 
 [面试题20：表示数值的字符串](https://github.com/Jack-Lee-Hiter/AlgorithmsByPython/blob/master/Target%20Offer/%E8%A1%A8%E7%A4%BA%E6%95%B0%E5%80%BC%E7%9A%84%E5%AD%97%E7%AC%A6%E4%B8%B2.py)：这道题的关键也在于讨论清楚情况，把所有可能出现的情况都考虑到。需要注意的是，指数E后面必须跟一个整数，不能没有数，也不能为小数。
 
-[面试题14：调整数组顺序使奇数位于偶数前面](https://github.com/Jack-Lee-Hiter/AlgorithmsByPython/blob/master/Target%20Offer/%E8%B0%83%E6%95%B4%E6%95%B0%E7%BB%84%E9%A1%BA%E5%BA%8F%E4%BD%BF%E5%A5%87%E6%95%B0%E4%BD%8D%E4%BA%8E%E5%81%B6%E6%95%B0%E5%89%8D%E9%9D%A2.py)：注重函数的扩展性能。把函数中的判断条件写成一个判断条件的函数，方便与函数的扩展。对于奇数位于偶数前面的情况，类似于快排，在头和尾分别设置一个指针，头指针指向奇数则后移，尾指针指向偶数则前移。
+[面试题21：调整数组顺序使奇数位于偶数前面](https://github.com/Jack-Lee-Hiter/AlgorithmsByPython/blob/master/Target%20Offer/%E8%B0%83%E6%95%B4%E6%95%B0%E7%BB%84%E9%A1%BA%E5%BA%8F%E4%BD%BF%E5%A5%87%E6%95%B0%E4%BD%8D%E4%BA%8E%E5%81%B6%E6%95%B0%E5%89%8D%E9%9D%A2.py)：注重函数的扩展性能。把函数中的判断条件写成一个判断条件的函数，方便与函数的扩展。对于奇数位于偶数前面的情况，类似于快排，在头和尾分别设置一个指针，头指针指向奇数则后移，尾指针指向偶数则前移。
 
 [面试题15：链表中倒数第k个结点](https://github.com/Jack-Lee-Hiter/AlgorithmsByPython/blob/master/Target%20Offer/%E9%93%BE%E8%A1%A8%E4%B8%AD%E5%80%92%E6%95%B0%E7%AC%ACk%E4%B8%AA%E7%BB%93%E7%82%B9.py)：代码的鲁棒性。需要注意：如果输入的链表为空；k大于链表的长度；k为0的情况。对于正常情况，设置两个指针分别指向头结点，第一个指针向前走**k-1步**，走到正数第k个结点，同时保持第二个指针不动，然后第一个指针和第二个指针每次同时前移一步，这样第一个指针指向尾结点的时候，第二个指针指向倒数第k个结点。判断尾结点的条件是 **pNode.next == None**。
 
