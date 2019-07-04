@@ -14,13 +14,14 @@ class Solution:
 
         front = 0
         rear = len(array)-1
-        while front <= rear:
-            while array[front] & 0x1 == 1:
+        while front < rear:
+            while front < rear and array[front] & 0x1 == 1:
                 front += 1
-            while array[rear] & 0x1 == 0:
+            while front < rear and array[rear] & 0x1 == 0:
                 rear -= 1
-            array[front], array[rear] = array[rear], array[front]
-        array[front], array[rear] = array[rear], array[front]
+            if front < rear:
+                array[front], array[rear] = array[rear], array[front]
+        
         return array
     # 直接利用Python的trick, 写一个简单的排列数组, 顺序不变
     def reOrderArray2(self, array):
@@ -44,32 +45,40 @@ class Solution:
 
     # 可扩展性的解法
     # 注意在一个函数的输入中, 输入另一个函数的写法func = self.fucName, funcName不需要加括号
-    def Reorder(self, pData, length, func):
-        if length == 0:
-            return
 
-        pBegin = 0
-        pEnd = length - 1
 
-        while pBegin < pEnd:
-            while pBegin < pEnd and not func(pData[pBegin]):
-                pBegin += 1
-            while pBegin < pEnd and func(pData[pEnd]):
-                pEnd -= 1
-
-            if pBegin < pEnd:
-                pData[pBegin], pData[pEnd] = pData[pEnd], pData[pBegin]
-        return pData
-
+class Solution:
+    def Reorder(self, array, func):
+        if len(array) < 1:
+            return 
+        if len(array) == 1:
+            return array
+        
+        front = 0
+        rear = len(array)-1
+        
+        while front < rear:
+            while front < rear and func(array[front]):
+                front += 1
+            while front < rear and not func(array[rear]):
+                rear -= 1
+            if front < rear:
+                array[front], array[rear] = array[rear], array[front]
+            
+        return array     
+    
     def isEven(self, n):
-        return not n & 0x1
+        return n & 0x1 == 1
 
     def isNegtive(self, n):
         return n >= 0
+    
+    def ReorderOddEven(self, array):       
+        return self.Reorder(array, func=self.isEven)
 
-    def ReorderOddEven(self, pData):
-        length = len(pData)
-        return self.Reorder(pData, length, func=self.isNegtive)
+
+
+
 
 
 S = Solution()
