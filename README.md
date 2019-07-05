@@ -106,7 +106,7 @@
 
 [面试题21：调整数组顺序使奇数位于偶数前面](https://github.com/Einstellung/AlgorithmByPython/blob/master/Target%20Offer/%E8%B0%83%E6%95%B4%E6%95%B0%E7%BB%84%E9%A1%BA%E5%BA%8F%E4%BD%BF%E5%A5%87%E6%95%B0%E4%BD%8D%E4%BA%8E%E5%81%B6%E6%95%B0%E5%89%8D%E9%9D%A2.py)：注重函数的扩展性能。把函数中的判断条件写成一个判断条件的函数，方便与函数的扩展。对于奇数位于偶数前面的情况，类似于快排，在头和尾分别设置一个指针，头指针指向奇数则后移，尾指针指向偶数则前移。
 
-[面试题15：链表中倒数第k个结点](https://github.com/Jack-Lee-Hiter/AlgorithmsByPython/blob/master/Target%20Offer/%E9%93%BE%E8%A1%A8%E4%B8%AD%E5%80%92%E6%95%B0%E7%AC%ACk%E4%B8%AA%E7%BB%93%E7%82%B9.py)：代码的鲁棒性。需要注意：如果输入的链表为空；k大于链表的长度；k为0的情况。对于正常情况，设置两个指针分别指向头结点，第一个指针向前走**k-1步**，走到正数第k个结点，同时保持第二个指针不动，然后第一个指针和第二个指针每次同时前移一步，这样第一个指针指向尾结点的时候，第二个指针指向倒数第k个结点。判断尾结点的条件是 **pNode.next == None**。
+[面试题22：链表中倒数第k个结点](https://github.com/Jack-Lee-Hiter/AlgorithmsByPython/blob/master/Target%20Offer/%E9%93%BE%E8%A1%A8%E4%B8%AD%E5%80%92%E6%95%B0%E7%AC%ACk%E4%B8%AA%E7%BB%93%E7%82%B9.py)：代码的鲁棒性。需要注意：如果输入的链表为空；k大于链表的长度；k为0的情况。对于正常情况，设置两个指针分别指向头结点，第一个指针向前走**k-1步**，走到正数第k个结点，同时保持第二个指针不动，然后第一个指针和第二个指针每次同时前移一步，这样第一个指针指向尾结点的时候，第二个指针指向倒数第k个结点。判断尾结点的条件是 **pNode.next == None**。
 
 [面试题16：递归以及非递归实现反转链表](https://github.com/Jack-Lee-Hiter/AlgorithmsByPython/blob/master/Target%20Offer/%E5%8F%8D%E8%BD%AC%E9%93%BE%E8%A1%A8.py)：需要注意三个问题：输入的链表头指针为None或者整个链表只有一个结点时，反转后的链表出现断裂，返回的翻转之后的头节点不是原始链表的尾结点。因此需要引入一个翻转后的头结点，以及一个指向当前结点的指针，一个指向当前结点前一个结点的指针，一个指向当前结点后一个结点的指针，防止出现断裂。推广：递归实现反转链表
 
