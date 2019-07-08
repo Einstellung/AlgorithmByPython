@@ -110,7 +110,7 @@
 
 [面试题23：链表中环的入口结点](https://github.com/Einstellung/AlgorithmByPython/blob/master/Target%20Offer/%E9%93%BE%E8%A1%A8%E4%B8%AD%E7%8E%AF%E7%9A%84%E5%85%A5%E5%8F%A3%E7%BB%93%E7%82%B9.py)：寻找链表中环的入口结点主要分成三个步骤：首先是设置两个快慢指针，如果快慢指针相遇，则快慢指针必然都在环中；然后从相遇的地方设置一个指针向后遍历并记录走的步数，当这个指针重新指到开始的位置的时候，当前对应的步数就是环中结点的数量k；然后设置两个指针从链表开始，第一个节点先走k步，然后第二个指针指到链表的开始，两个指针每次都向后走一步，两个指针相遇的位置就是链表的入口。
 
-[面试题16：递归以及非递归实现反转链表](https://github.com/Jack-Lee-Hiter/AlgorithmsByPython/blob/master/Target%20Offer/%E5%8F%8D%E8%BD%AC%E9%93%BE%E8%A1%A8.py)：需要注意三个问题：输入的链表头指针为None或者整个链表只有一个结点时，反转后的链表出现断裂，返回的翻转之后的头节点不是原始链表的尾结点。因此需要引入一个翻转后的头结点，以及一个指向当前结点的指针，一个指向当前结点前一个结点的指针，一个指向当前结点后一个结点的指针，防止出现断裂。推广：递归实现反转链表
+[面试题24：递归以及非递归实现反转链表](https://github.com/Jack-Lee-Hiter/AlgorithmsByPython/blob/master/Target%20Offer/%E5%8F%8D%E8%BD%AC%E9%93%BE%E8%A1%A8.py)：需要注意三个问题：输入的链表头指针为None或者整个链表只有一个结点时，反转后的链表出现断裂，返回的翻转之后的头节点不是原始链表的尾结点。因此需要引入一个翻转后的头结点，以及一个指向当前结点的指针，一个指向当前结点前一个结点的指针，一个指向当前结点后一个结点的指针，防止出现断裂。推广：递归实现反转链表
 
 [面试题17：合并两个排序的链表](https://github.com/Jack-Lee-Hiter/AlgorithmsByPython/blob/master/Target%20Offer/%E5%90%88%E5%B9%B6%E4%B8%A4%E4%B8%AA%E6%8E%92%E5%BA%8F%E7%9A%84%E9%93%BE%E8%A1%A8.py)：要注意特殊输入，如果输入是空链表，不能崩溃。
 
