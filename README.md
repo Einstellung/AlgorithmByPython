@@ -114,7 +114,7 @@
 
 [面试题25：合并两个排序的链表](https://github.com/Jack-Lee-Hiter/AlgorithmsByPython/blob/master/Target%20Offer/%E5%90%88%E5%B9%B6%E4%B8%A4%E4%B8%AA%E6%8E%92%E5%BA%8F%E7%9A%84%E9%93%BE%E8%A1%A8.py)：要注意特殊输入，如果输入是空链表，不能崩溃。
 
-[面试题18：树的子结构](https://github.com/Jack-Lee-Hiter/AlgorithmsByPython/blob/master/Target%20Offer/%E6%A0%91%E7%9A%84%E5%AD%90%E7%BB%93%E6%9E%84.py):多出需要判断指针是不是None，避免访问空指针而造成程序崩溃。
+[面试题26：树的子结构](https://github.com/Jack-Lee-Hiter/AlgorithmsByPython/blob/master/Target%20Offer/%E6%A0%91%E7%9A%84%E5%AD%90%E7%BB%93%E6%9E%84.py):多出需要判断指针是不是None，避免访问空指针而造成程序崩溃。
 
 [面试题19：二叉树的镜像](https://github.com/Jack-Lee-Hiter/AlgorithmsByPython/blob/master/Target%20Offer/%E4%BA%8C%E5%8F%89%E6%A0%91%E7%9A%84%E9%95%9C%E5%83%8F.py)：需要判断输入的结点为空或者输入的结点没有子树的情况。
 
