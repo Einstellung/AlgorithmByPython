@@ -1,8 +1,8 @@
 '''
-输入两棵二叉树A，B，判断B是不是A的子结构
+输入两棵二叉树A，B，判断B是不是A的子结构（注意浮点数比较）
 空树不是任意一个树的子结构
 '''
-
+import math
 
 class TreeNode:
     def __init__(self, x):
@@ -13,7 +13,7 @@ class Solution:
     def HasSubtree(self, pRoot1, pRoot2):
         result = False
         if pRoot1 != None and pRoot2 != None:
-            if pRoot1.val == pRoot2.val:
+            if math.isclose(pRoot1.val, pRoot2.val):
                 result = self.DoesTree1haveTree2(pRoot1, pRoot2)
             if not result:
                 result = self.HasSubtree(pRoot1.left, pRoot2)
@@ -26,9 +26,11 @@ class Solution:
     def DoesTree1haveTree2(self, pRoot1, pRoot2):
         if pRoot2 == None:
             return True
+        # 当第一个if不满足时表明树2没有到叶子节点部位
+        # 这时候树1页不应该到叶子节点部位，这时候如果节点值为None说明错了
         if pRoot1 == None:
             return False
-        if pRoot1.val != pRoot2.val:
+        if not math.isclose(pRoot1.val, pRoot2.val):
             return False
 
         return self.DoesTree1haveTree2(pRoot1.left, pRoot2.left) and self.DoesTree1haveTree2(pRoot1.right, pRoot2.right)
