@@ -116,7 +116,7 @@
 
 [面试题26：树的子结构](https://github.com/Einstellung/AlgorithmByPython/blob/master/Target%20Offer/%E6%A0%91%E7%9A%84%E5%AD%90%E7%BB%93%E6%9E%84.py):多出需要判断指针是不是None，避免访问空指针而造成程序崩溃。
 
-[面试题27：二叉树的镜像](https://github.com/Jack-Lee-Hiter/AlgorithmsByPython/blob/master/Target%20Offer/%E4%BA%8C%E5%8F%89%E6%A0%91%E7%9A%84%E9%95%9C%E5%83%8F.py)：需要判断输入的结点为空或者输入的结点没有子树的情况。
+[面试题27：二叉树的镜像](https://github.com/Einstellung/AlgorithmByPython/blob/master/Target%20Offer/%E4%BA%8C%E5%8F%89%E6%A0%91%E7%9A%84%E9%95%9C%E5%83%8F.py)：需要判断输入的结点为空或者输入的结点没有子树的情况。
 
 [面试题28：对称的二叉树](https://github.com/Jack-Lee-Hiter/AlgorithmsByPython/blob/master/Target%20Offer/%E5%AF%B9%E7%A7%B0%E7%9A%84%E4%BA%8C%E5%8F%89%E6%A0%91.py)：分为递归和非递归的两种方式，思想是一样的。主要就是把叶子节点的None节点也加入到遍历当中。按照前序遍历二叉树，存入一个序列中。然后按照和前序遍历对应的先父节点，然后右子节点，最后左子节点遍历二叉树，存入一个序列。如果前后两个序列相等，那么说明二叉树是对称的。
 
