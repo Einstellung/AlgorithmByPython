@@ -116,7 +116,9 @@
 
 [面试题26：树的子结构](https://github.com/Jack-Lee-Hiter/AlgorithmsByPython/blob/master/Target%20Offer/%E6%A0%91%E7%9A%84%E5%AD%90%E7%BB%93%E6%9E%84.py):多出需要判断指针是不是None，避免访问空指针而造成程序崩溃。
 
-[面试题19：二叉树的镜像](https://github.com/Jack-Lee-Hiter/AlgorithmsByPython/blob/master/Target%20Offer/%E4%BA%8C%E5%8F%89%E6%A0%91%E7%9A%84%E9%95%9C%E5%83%8F.py)：需要判断输入的结点为空或者输入的结点没有子树的情况。
+[面试题27：二叉树的镜像](https://github.com/Jack-Lee-Hiter/AlgorithmsByPython/blob/master/Target%20Offer/%E4%BA%8C%E5%8F%89%E6%A0%91%E7%9A%84%E9%95%9C%E5%83%8F.py)：需要判断输入的结点为空或者输入的结点没有子树的情况。
+
+[面试题28：对称的二叉树](https://github.com/Jack-Lee-Hiter/AlgorithmsByPython/blob/master/Target%20Offer/%E5%AF%B9%E7%A7%B0%E7%9A%84%E4%BA%8C%E5%8F%89%E6%A0%91.py)：分为递归和非递归的两种方式，思想是一样的。主要就是把叶子节点的None节点也加入到遍历当中。按照前序遍历二叉树，存入一个序列中。然后按照和前序遍历对应的先父节点，然后右子节点，最后左子节点遍历二叉树，存入一个序列。如果前后两个序列相等，那么说明二叉树是对称的。
 
 [面试题20：顺时针打印矩阵](https://github.com/Jack-Lee-Hiter/AlgorithmsByPython/blob/master/Target%20Offer/%E9%A1%BA%E6%97%B6%E9%92%88%E6%89%93%E5%8D%B0%E7%9F%A9%E9%98%B5.py)：首先需要判断每一步开始是的坐标点是否满足小于行数的一半且小于列数的一半，在最后一圈中，可能出现仅能向右走一行，仅能向右走一行向下走一列，向右走一行向下走一列向左走一行，能走完整一圈，一共四种情况。其中只有能向左走一行必然发生，不必判断，剩余的都需要判断发生条件。
 
@@ -193,8 +195,6 @@
 
 [面试题55：字符流中第一个不重复的字符](https://github.com/Jack-Lee-Hiter/AlgorithmsByPython/blob/master/Target%20Offer/%E5%AD%97%E7%AC%A6%E6%B5%81%E4%B8%AD%E7%AC%AC%E4%B8%80%E4%B8%AA%E4%B8%8D%E9%87%8D%E5%A4%8D%E7%9A%84%E5%AD%97%E7%AC%A6.py)：引入两个辅助存储空间。一个Dict存储当前出现的字符以及字符出现的次数，一个List存储当前出现字符。然后每次比较List的第一个字符在Dict中对应的次数，如果为1则输出这个字符，如果不为1则弹出这个字符比较下一个字符。
 
-
-[面试题59：对称的二叉树](https://github.com/Jack-Lee-Hiter/AlgorithmsByPython/blob/master/Target%20Offer/%E5%AF%B9%E7%A7%B0%E7%9A%84%E4%BA%8C%E5%8F%89%E6%A0%91.py)：分为递归和非递归的两种方式，思想是一样的。主要就是把叶子节点的None节点也加入到遍历当中。按照前序遍历二叉树，存入一个序列中。然后按照和前序遍历对应的先父节点，然后右子节点，最后左子节点遍历二叉树，存入一个序列。如果前后两个序列相等，那么说明二叉树是对称的。
 
 [面试题60：把二叉树打印成多行](https://github.com/Jack-Lee-Hiter/AlgorithmsByPython/blob/master/Target%20Offer/%E6%8A%8A%E4%BA%8C%E5%8F%89%E6%A0%91%E6%89%93%E5%8D%B0%E6%88%90%E5%A4%9A%E8%A1%8C.py)：引入两个队列。首先把当前层的节点存入到一个队列queue1中，然后遍历当前队列queue1，在遍历的过程中，如果节点有左子树或右子树，依次存入另一个队列queue2。然后遍历队列queue2，如此往复。
 
