@@ -16,12 +16,12 @@ class Solution:
         if root.left == None and root.right == None:
             return root
 
-        pTemp = root.left
-        root.left = root.right
-        root.right = pTemp
+        root.left, root.right = root.right, root.left
 
-        self.Mirror(root.left)
-        self.Mirror(root.right)
+        if root.left:
+            self.Mirror(root.left)
+        if root.right:    
+            self.Mirror(root.right)
 
     # 非递归实现
     def Mirror2(self, root):
