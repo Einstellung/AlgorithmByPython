@@ -67,30 +67,52 @@
 
 [面试题2：实现Singleton模式](https://github.com/Jack-Lee-Hiter/AlgorithmsByPython/blob/master/Target%20Offer/Singleton.py)
 
+### 数组
+
 [面试题4：二维数组中的查找](https://github.com/Jack-Lee-Hiter/AlgorithmsByPython/blob/master/Target%20Offer/%E4%BA%8C%E7%BB%B4%E6%95%B0%E7%BB%84%E6%9F%A5%E6%89%BE.py)：对于在一个每一行从左到右依次递增，每一列从上到下依次递增的二维数组查找一个元素，可以选择从数组左上角开始查找array[i]\[j]，如果目标元素大于array[i]\[j]，i+=1，如果元素小于array[i]\[j]，j-=1，依次循环直至找到这个数。
+
+### 字符串
 
 [面试题5：替换空格](https://github.com/Einstellung/AlgorithmsByPython/blob/master/Target%20Offer/%E6%9B%BF%E6%8D%A2%E7%A9%BA%E6%A0%BC.py)：如果直接每次遇到空格添加'%20'，那么空格后面的数字就需要频繁向后移动。遇到这种移动问题，我们可以尝试先给出最终需要的长度，然后从后向前扫描，同时给定两个指针来保证定位。**逆向思维**
 
+### 链表
+
 [面试题6：从头到尾打印链表](https://github.com/Einstellung/AlgorithmsByPython/blob/master/Target%20Offer/%E5%8F%8D%E5%90%91%E6%89%93%E5%8D%B0%E9%93%BE%E8%A1%A8.py)：从头到尾遍历链表，并用一个栈存储每个结点的值，之后出栈输出值即可。
+
+### 树
 
 [面试题7：重建二叉树](https://github.com/Jack-Lee-Hiter/AlgorithmsByPython/blob/master/Target%20Offer/%E9%87%8D%E5%BB%BA%E4%BA%8C%E5%8F%89%E6%A0%91.py)：利用二叉树前序遍历和中序遍历的特性。前序遍历的第一个值一定为根节点，对应于中序遍历中间的一个点。在中序遍历序列中，这个点左侧的均为根的左子树，这个点右侧的均为根的右子树。这时可以利用递归，分别取前序遍历[1:i+1]和中序遍历的[:i]对应与左子树继续上一个过程，取前序遍历[i+1:]和中序遍历[i+1]对应于右子树继续上一个过程，最终得以重建二叉树。
 
 [面试题8：二叉树的下一个结点](https://github.com/Einstellung/AlgorithmsByPython/blob/master/Target%20Offer/%E4%BA%8C%E5%8F%89%E6%A0%91%E7%9A%84%E4%B8%8B%E4%B8%80%E4%B8%AA%E7%BB%93%E7%82%B9.py)：三种情况：当前节点有右子树的话，当前节点的下一个结点是右子树中的最左子节点；当前节点无右子树但是是父节点的左子节点，下一个节点是当前结点的父节点；当前节点无右子树而且是父节点的右子节点，则一直向上遍历，直到找到最靠近的一个祖先节点pNode，pNode是其父节点的左子节点，那么输入节点的下一个结点就是pNode的父节点。
 
+### 栈和队列
+
 [面试题9：用两个栈实现队列](https://github.com/Jack-Lee-Hiter/AlgorithmsByPython/blob/master/Target%20Offer/%E7%94%A8%E4%B8%A4%E4%B8%AA%E6%A0%88%E5%AE%9E%E7%8E%B0%E9%98%9F%E5%88%97.py)：需要两个栈Stack1和Stack2，push的时候直接push进Stack1。pop需要判断Stack1和Stack2中元素的情况，Stack1空的话，直接从Stack2 pop，Stack1不空的话，把Stack1的元素push进入Stack2，然后pop Stack2的值。[推广：用两个队列实现栈](https://github.com/Einstellung/AlgorithmsByPython/blob/master/Target%20Offer/%E7%94%A8%E4%B8%A4%E4%B8%AA%E9%98%9F%E5%88%97%E5%AE%9E%E7%8E%B0%E6%A0%88.py)
+
+### 递归和循环
 
 [面试题10：斐波那契数列](https://github.com/Einstellung/AlgorithmsByPython/blob/master/Target%20Offer/%E6%96%90%E6%B3%A2%E9%82%A3%E5%A5%91%E6%95%B0%E5%88%97.py)：如何不使用递归实现斐波那契数列，需要把前面两个数字存入在一个数组中。斐波那契数列的变形有很多，如[青蛙跳台阶](https://github.com/Einstellung/AlgorithmsByPython/blob/master/Target%20Offer/%E9%9D%92%E8%9B%99%E8%B7%B3%E5%8F%B0%E9%98%B6.py)，一次跳一个或者两个；铺瓷砖问题。[**变态青蛙跳**](https://github.com/Einstellung/AlgorithmsByPython/blob/master/Target%20Offer/%E5%8F%98%E6%80%81%E9%9D%92%E8%9B%99%E8%B7%B3%E5%8F%B0%E9%98%B6.py)，每次至少跳一个，至多跳n个，一共有f(n)=2<sup>n-1</sup>种跳法。考察数学建模的能力。以及[矩形覆盖问题](https://blog.csdn.net/Einstellung/article/details/90020345)
 
+### 查找和排序
+
 [面试题11：旋转数组的最小数字](https://github.com/Einstellung/AlgorithmByPython/blob/master/Target%20Offer/%E6%97%8B%E8%BD%AC%E6%95%B0%E7%BB%84%E7%9A%84%E6%9C%80%E5%B0%8F%E6%95%B0%E5%AD%97.py)：二分查找的变形，注意到旋转数组的首元素肯定不小于旋转数组的尾元素，设置中间点。如果中间点大于首元素，说明最小数字在后面一半，如果中间点小于尾元素，说明最小数字在前一半。依次循环。同时，当一次循环中首元素小于尾元素，说明最小值就是首元素。但是当首元素等于尾元素等于中间值，只能在这个区域顺序查找。
+
+### 回溯法
 
 [面试题12：矩阵中的路径](https://github.com/Einstellung/AlgorithmByPython/blob/master/Target%20Offer/%E7%9F%A9%E9%98%B5%E4%B8%AD%E7%9A%84%E8%B7%AF%E5%BE%84.py)：回溯法。任选一个格子作为路径的起点。假设矩阵中某个格子的字符为ch并且这个格子将对应于路径上的第i个字符。如果路径上的第i个字符不是ch，那么这个格子不可能处在路径上的第i个位置。如果路径上的第i个字符正好是ch，那么往相邻的格子寻找路径上的第i+1个字符。除在矩阵边界上的格子外，其他各自都有4个相邻的格子。重复这个过程直到路径上的所有字符都在矩阵中找到相应的位置。
 
 [面试题13：机器人的运动范围](https://github.com/Jack-Lee-Hiter/AlgorithmsByPython/blob/master/Target%20Offer/%E6%9C%BA%E5%99%A8%E4%BA%BA%E7%9A%84%E8%BF%90%E5%8A%A8%E8%8C%83%E5%9B%B4.py)：回溯法。类似于面试题12。把方格看成一个m*n的矩阵，从（0，0）开始移动。当准备进入坐标(i, j)是，通过检查坐标的数位来判断机器人能否进入。如果能进入的话，接着判断四个相邻的格子。
 
+### 动态规划和贪婪算法
+
 [面试题14：剪绳子](https://github.com/Einstellung/AlgorithmByPython/blob/master/Target%20Offer/%E5%89%AA%E7%BB%B3%E5%AD%90_%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92.py)动态规划法。类似于面试题10题，把大的问题逐步分解成小的问题。动态规划还要有一个条件就是分解成的小问题是有最优解的，而且把小问题组合起来可以得到大问题的最优解。也就是说整体问题的最优解是依赖各个子问题的最优解。由于子问题在分解大问题的过程中重复出现，为了避免重复求解子问题，我们可以用从下往上的顺序先计算小问题的最优解并存储下来，再以此为基础求取大问题的最优解。**从上往下分析问题，从下往上求解问题**，在用动态规划算法来做剪绳子这个问题的时候，我们实际上做的是f(n)=max(f(i)\*f(n-i))这个问题的答案。
 这个题还有一种解法是用[贪婪算法](https://github.com/Einstellung/AlgorithmByPython/blob/master/Target%20Offer/%E5%89%AA%E7%BB%B3%E5%AD%90_%E8%B4%AA%E5%A9%AA%E7%AE%97%E6%B3%95.py)来做。贪婪算法和动态规划不一样的是，我们用贪婪算法解决问题的时候，每一步都做出一个贪婪的选择，基于这个选择，我们确定可以得到最优解。但做出什么样贪婪选择是合理的，需要用数学方式来证明选择是正确的。
 
+### 位运算
+
 [面试题15：二进制中1的个数](https://github.com/Jack-Lee-Hiter/AlgorithmsByPython/blob/master/Target%20Offer/%E4%BA%8C%E8%BF%9B%E5%88%B6%E4%B8%AD1%E7%9A%84%E4%B8%AA%E6%95%B0.py)：注意到每个**非零**整数n和n-1进行按位与运算，整数n的二进制数中最右边的1就会变成0，那么二进制数中的1的个数就会减少一个，因此可以利用一个循环，使得 n = n&(n-1) ，计算经过几次运算减少到0，就是有几个1。注意：书中给了另外两种方法，分别是原始n左移一位和右移一位的方法，因为Python不会出现整数溢出的情况，这里就不再考虑着两种方法。扩展：判断一个数值是不是2得整数次方，如果是的话，这个数的二进制数中有且只有一个1，那么这个数n会有 n&(n-1) == 0。或者求两个整数m和n需要改变m二进制中的多少位才能得到n，可以先做 m^n 的异或运算，然后求这个数中有多少个1。
+
+### 代码的完整性
 
 [面试题16：数值的整数次方](https://github.com/Einstellung/AlgorithmByPython/blob/master/Target%20Offer/%E6%95%B0%E5%80%BC%E7%9A%84%E6%95%B4%E6%95%B0%E6%AC%A1%E6%96%B9.py)：如果采用常规解法，需要注意的地方:当指数为负数的时候；当底数为零且指数为负数的情况；在判断底数base是不是等于0的时候,不能直接写base==0, 因为计算机内表示小数时有误差,只能判断他们的差的绝对值是不是在一个很小的范围内。如果采用递归解法，当n为偶数, a<sup>n</sup> = a<sup>n/2</sup> * a<sup>n/2</sup>，当n为奇数, a<sup>n</sup> = a<sup>(n-1)/2</sup> * a<sup>(n-1)/2</sup> * a，利用右移一位代替除2运算，利用 &1 判断是否为奇数。同时需要注意**递归终止条件**，exponent = 1的话，return base，exponent = -1的话，return 1.0/base。再次提醒！必须写成 1.0/base，否则 1/base，返回一个integer 0！
 
@@ -106,6 +128,8 @@
 
 [面试题21：调整数组顺序使奇数位于偶数前面](https://github.com/Einstellung/AlgorithmByPython/blob/master/Target%20Offer/%E8%B0%83%E6%95%B4%E6%95%B0%E7%BB%84%E9%A1%BA%E5%BA%8F%E4%BD%BF%E5%A5%87%E6%95%B0%E4%BD%8D%E4%BA%8E%E5%81%B6%E6%95%B0%E5%89%8D%E9%9D%A2.py)：注重函数的扩展性能。把函数中的判断条件写成一个判断条件的函数，方便与函数的扩展。对于奇数位于偶数前面的情况，类似于快排，在头和尾分别设置一个指针，头指针指向奇数则后移，尾指针指向偶数则前移。
 
+### 代码的鲁棒性
+
 [面试题22：链表中倒数第k个结点](https://github.com/Jack-Lee-Hiter/AlgorithmsByPython/blob/master/Target%20Offer/%E9%93%BE%E8%A1%A8%E4%B8%AD%E5%80%92%E6%95%B0%E7%AC%ACk%E4%B8%AA%E7%BB%93%E7%82%B9.py)：代码的鲁棒性。需要注意：如果输入的链表为空；k大于链表的长度；k为0的情况。对于正常情况，设置两个指针分别指向头结点，第一个指针向前走**k-1步**，走到正数第k个结点，同时保持第二个指针不动，然后第一个指针和第二个指针每次同时前移一步，这样第一个指针指向尾结点的时候，第二个指针指向倒数第k个结点。判断尾结点的条件是 **pNode.next == None**。
 
 [面试题23：链表中环的入口结点](https://github.com/Einstellung/AlgorithmByPython/blob/master/Target%20Offer/%E9%93%BE%E8%A1%A8%E4%B8%AD%E7%8E%AF%E7%9A%84%E5%85%A5%E5%8F%A3%E7%BB%93%E7%82%B9.py)：寻找链表中环的入口结点主要分成三个步骤：首先是设置两个快慢指针，如果快慢指针相遇，则快慢指针必然都在环中；然后从相遇的地方设置一个指针向后遍历并记录走的步数，当这个指针重新指到开始的位置的时候，当前对应的步数就是环中结点的数量k；然后设置两个指针从链表开始，第一个节点先走k步，然后第二个指针指到链表的开始，两个指针每次都向后走一步，两个指针相遇的位置就是链表的入口。
@@ -116,23 +140,27 @@
 
 [面试题26：树的子结构](https://github.com/Einstellung/AlgorithmByPython/blob/master/Target%20Offer/%E6%A0%91%E7%9A%84%E5%AD%90%E7%BB%93%E6%9E%84.py):多出需要判断指针是不是None，避免访问空指针而造成程序崩溃。
 
-[面试题27：二叉树的镜像](https://github.com/Jack-Lee-Hiter/AlgorithmsByPython/blob/master/Target%20Offer/%E4%BA%8C%E5%8F%89%E6%A0%91%E7%9A%84%E9%95%9C%E5%83%8F.py)：需要判断输入的结点为空或者输入的结点没有子树的情况。
+### 画图让抽象问题形象化
+
+[面试题27：二叉树的镜像](https://github.com/Einstellung/AlgorithmByPython/blob/master/Target%20Offer/%E4%BA%8C%E5%8F%89%E6%A0%91%E7%9A%84%E9%95%9C%E5%83%8F.py)：需要判断输入的结点为空或者输入的结点没有子树的情况。
 
 [面试题28：对称的二叉树](https://github.com/Jack-Lee-Hiter/AlgorithmsByPython/blob/master/Target%20Offer/%E5%AF%B9%E7%A7%B0%E7%9A%84%E4%BA%8C%E5%8F%89%E6%A0%91.py)：分为递归和非递归的两种方式，思想是一样的。主要就是把叶子节点的None节点也加入到遍历当中。按照前序遍历二叉树，存入一个序列中。然后按照和前序遍历对应的先父节点，然后右子节点，最后左子节点遍历二叉树，存入一个序列。如果前后两个序列相等，那么说明二叉树是对称的。
 
-[面试题20：顺时针打印矩阵](https://github.com/Jack-Lee-Hiter/AlgorithmsByPython/blob/master/Target%20Offer/%E9%A1%BA%E6%97%B6%E9%92%88%E6%89%93%E5%8D%B0%E7%9F%A9%E9%98%B5.py)：首先需要判断每一步开始是的坐标点是否满足小于行数的一半且小于列数的一半，在最后一圈中，可能出现仅能向右走一行，仅能向右走一行向下走一列，向右走一行向下走一列向左走一行，能走完整一圈，一共四种情况。其中只有能向左走一行必然发生，不必判断，剩余的都需要判断发生条件。
+[面试题29：顺时针打印矩阵](https://github.com/Jack-Lee-Hiter/AlgorithmsByPython/blob/master/Target%20Offer/%E9%A1%BA%E6%97%B6%E9%92%88%E6%89%93%E5%8D%B0%E7%9F%A9%E9%98%B5.py)：首先需要判断每一步开始是的坐标点是否满足小于行数的一半且小于列数的一半，在最后一圈中，可能出现仅能向右走一行，仅能向右走一行向下走一列，向右走一行向下走一列向左走一行，能走完整一圈，一共四种情况。其中只有能向左走一行必然发生，不必判断，剩余的都需要判断发生条件。
 
-[面试题21：包含min函数的栈](https://github.com/Jack-Lee-Hiter/AlgorithmsByPython/blob/master/Target%20Offer/%E5%8C%85%E5%90%ABmin%E5%87%BD%E6%95%B0%E7%9A%84%E6%A0%88.py)：引入两个栈，一个栈每次push实际的数字，另一个minStack，如果push的数字小于minStack栈顶的数字，push新的数字，繁殖，把栈顶的数字再压入一遍。
+### 举例让抽象问题具体化
 
-[面试题22：栈的压入、弹出序列](https://github.com/Jack-Lee-Hiter/AlgorithmsByPython/blob/master/Target%20Offer/%E6%A0%88%E7%9A%84%E5%8E%8B%E5%85%A5%E5%BC%B9%E5%87%BA%E5%BA%8F%E5%88%97.py)：建立一个辅助栈，把push序列的数字依次压入辅助栈，每次压入后，比较辅助栈的栈顶元素和pop序列的首元素是否相等，相等的话就推出pop序列的首元素和辅助栈的栈顶元素，若最后辅助栈为空，则push序列可以对应于pop序列。
+[面试题30：包含min函数的栈](https://github.com/Jack-Lee-Hiter/AlgorithmsByPython/blob/master/Target%20Offer/%E5%8C%85%E5%90%ABmin%E5%87%BD%E6%95%B0%E7%9A%84%E6%A0%88.py)：引入两个栈，一个栈每次push实际的数字，另一个minStack，如果push的数字小于minStack栈顶的数字，push新的数字，繁殖，把栈顶的数字再压入一遍。
 
-[面试题23：从上往下打印二叉树](https://github.com/Jack-Lee-Hiter/AlgorithmsByPython/blob/master/Target%20Offer/%E4%BB%8E%E4%B8%8A%E5%BE%80%E4%B8%8B%E6%89%93%E5%8D%B0%E4%BA%8C%E5%8F%89%E6%A0%91.py)：引入一个队列即可。推广：有向图的广度优先遍历也是基于队列的。
+[面试题31：栈的压入、弹出序列](https://github.com/Jack-Lee-Hiter/AlgorithmsByPython/blob/master/Target%20Offer/%E6%A0%88%E7%9A%84%E5%8E%8B%E5%85%A5%E5%BC%B9%E5%87%BA%E5%BA%8F%E5%88%97.py)：建立一个辅助栈，把push序列的数字依次压入辅助栈，每次压入后，比较辅助栈的栈顶元素和pop序列的首元素是否相等，相等的话就推出pop序列的首元素和辅助栈的栈顶元素，若最后辅助栈为空，则push序列可以对应于pop序列。
 
-[面试题24：二叉搜索树的后续遍历序列](https://github.com/Jack-Lee-Hiter/AlgorithmsByPython/blob/master/Target%20Offer/%E4%BA%8C%E5%8F%89%E6%90%9C%E7%B4%A2%E6%A0%91%E7%9A%84%E5%90%8E%E7%BB%AD%E9%81%8D%E5%8E%86%E5%BA%8F%E5%88%97.py)：根据后续遍历的性质，尾元素必定是树的根，同时小于尾元素的值是左子树，大于尾元素的值为右子树，且序列前半部分均小于尾元素，后半部分均大于尾元素（如果同时存在左右子树的话），可以将序列划分左子树序列和右子树序列，然后递归比较师妹每一段均满足此性质。可以减少递归深度的办法：某段的元素个数如果<=3，则返回True；某整段的最小元素不小于尾元素或者整段的最大元素不大于尾元素，说明仅有左子树或者右子树，返回True。
+[面试题32：从上往下打印二叉树](https://github.com/Jack-Lee-Hiter/AlgorithmsByPython/blob/master/Target%20Offer/%E4%BB%8E%E4%B8%8A%E5%BE%80%E4%B8%8B%E6%89%93%E5%8D%B0%E4%BA%8C%E5%8F%89%E6%A0%91.py)：引入一个队列即可。推广：有向图的广度优先遍历也是基于队列的。
 
-[面试题25：二叉树中和为某一值的路径](https://github.com/Jack-Lee-Hiter/AlgorithmsByPython/blob/master/Target%20Offer/%E4%BA%8C%E5%8F%89%E6%A0%91%E4%B8%AD%E5%92%8C%E4%B8%BA%E6%9F%90%E4%B8%80%E5%80%BC%E7%9A%84%E8%B7%AF%E5%BE%84.py)：递归
+[面试题33：二叉搜索树的后续遍历序列](https://github.com/Jack-Lee-Hiter/AlgorithmsByPython/blob/master/Target%20Offer/%E4%BA%8C%E5%8F%89%E6%90%9C%E7%B4%A2%E6%A0%91%E7%9A%84%E5%90%8E%E7%BB%AD%E9%81%8D%E5%8E%86%E5%BA%8F%E5%88%97.py)：根据后续遍历的性质，尾元素必定是树的根，同时小于尾元素的值是左子树，大于尾元素的值为右子树，且序列前半部分均小于尾元素，后半部分均大于尾元素（如果同时存在左右子树的话），可以将序列划分左子树序列和右子树序列，然后递归比较师妹每一段均满足此性质。可以减少递归深度的办法：某段的元素个数如果<=3，则返回True；某整段的最小元素不小于尾元素或者整段的最大元素不大于尾元素，说明仅有左子树或者右子树，返回True。
 
-[面试题26：复杂链表的复制](https://github.com/Jack-Lee-Hiter/AlgorithmsByPython/blob/master/Target%20Offer/%E5%A4%8D%E6%9D%82%E9%93%BE%E8%A1%A8%E7%9A%84%E5%A4%8D%E5%88%B6.py)：注意链表结点进行复制的时候，不能简单地写作 pCloned = pNode，这样的话之后对pCloned的操作也会作用在pNode上面，导致操作循环往复。需要重新定一个pCloned = ListNode(0)，然后对结点的.val  .next   .random 进行设置。同时，在将复制的结点的random指向原始链表结点的random的next的时候，需要先判断一下，原始链表结点的next是否为None，不为None再指向。
+[面试题34：二叉树中和为某一值的路径](https://github.com/Jack-Lee-Hiter/AlgorithmsByPython/blob/master/Target%20Offer/%E4%BA%8C%E5%8F%89%E6%A0%91%E4%B8%AD%E5%92%8C%E4%B8%BA%E6%9F%90%E4%B8%80%E5%80%BC%E7%9A%84%E8%B7%AF%E5%BE%84.py)：递归
+
+[面试题35：复杂链表的复制](https://github.com/Jack-Lee-Hiter/AlgorithmsByPython/blob/master/Target%20Offer/%E5%A4%8D%E6%9D%82%E9%93%BE%E8%A1%A8%E7%9A%84%E5%A4%8D%E5%88%B6.py)：注意链表结点进行复制的时候，不能简单地写作 pCloned = pNode，这样的话之后对pCloned的操作也会作用在pNode上面，导致操作循环往复。需要重新定一个pCloned = ListNode(0)，然后对结点的.val  .next   .random 进行设置。同时，在将复制的结点的random指向原始链表结点的random的next的时候，需要先判断一下，原始链表结点的next是否为None，不为None再指向。
 
 [面试题27：二叉搜索树与双向链表](https://github.com/Jack-Lee-Hiter/AlgorithmsByPython/blob/master/Target%20Offer/%E4%BA%8C%E5%8F%89%E6%90%9C%E7%B4%A2%E6%A0%91%E4%B8%8E%E5%8F%8C%E5%90%91%E9%93%BE%E8%A1%A8.py):按照左右子树分治，递归实现。根的左边连接左子树的最右边结点，右边连接右子树的最左边结点。
 
