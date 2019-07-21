@@ -15,13 +15,15 @@ class TreeNode:
 class Solution:
     # 返回从上到下每个节点值列表，例：[1,2,3]
     def PrintFromTopToBottom(self, root):
-        queue = []
         if not root:
             return []
 
         result = []
-        queue.append(root)
+        queue = [root]
         while len(queue) > 0:
+            # 将最上面的根节点给currentRoot
+            # 之后queue再append下一层节点左子节点和右子节点
+            # 因为是按照队列形式不停输出给currentRoot，所以就逐层打印了
             currentRoot = queue.pop(0)
             result.append(currentRoot.val)
             if currentRoot.left:
