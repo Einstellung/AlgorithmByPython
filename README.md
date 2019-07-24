@@ -156,7 +156,7 @@
 
 [面试题32：从上往下打印二叉树](https://github.com/Einstellung/AlgorithmByPython/blob/master/Target%20Offer/%E4%BB%8E%E4%B8%8A%E5%BE%80%E4%B8%8B%E6%89%93%E5%8D%B0%E4%BA%8C%E5%8F%89%E6%A0%91.py)：引入一个队列即可。推广：有向图的广度优先遍历也是基于队列的。[题目二：分行从上到下打印二叉树](https://github.com/Einstellung/AlgorithmByPython/blob/master/Target%20Offer/%E5%88%86%E8%A1%8C%E4%BB%8E%E4%B8%8A%E5%88%B0%E4%B8%8B%E6%89%93%E5%8D%B0%E4%BA%8C%E5%8F%89%E6%A0%91.py)
 
-[面试题33：二叉搜索树的后续遍历序列](https://github.com/Jack-Lee-Hiter/AlgorithmsByPython/blob/master/Target%20Offer/%E4%BA%8C%E5%8F%89%E6%90%9C%E7%B4%A2%E6%A0%91%E7%9A%84%E5%90%8E%E7%BB%AD%E9%81%8D%E5%8E%86%E5%BA%8F%E5%88%97.py)：根据后续遍历的性质，尾元素必定是树的根，同时小于尾元素的值是左子树，大于尾元素的值为右子树，且序列前半部分均小于尾元素，后半部分均大于尾元素（如果同时存在左右子树的话），可以将序列划分左子树序列和右子树序列，然后递归比较师妹每一段均满足此性质。可以减少递归深度的办法：某段的元素个数如果<=3，则返回True；某整段的最小元素不小于尾元素或者整段的最大元素不大于尾元素，说明仅有左子树或者右子树，返回True。
+[面试题33：二叉搜索树的后续遍历序列](https://github.com/Einstellung/AlgorithmByPython/blob/master/Target%20Offer/%E4%BA%8C%E5%8F%89%E6%90%9C%E7%B4%A2%E6%A0%91%E7%9A%84%E5%90%8E%E7%BB%AD%E9%81%8D%E5%8E%86%E5%BA%8F%E5%88%97.py)：根据后续遍历的性质，尾元素必定是树的根，同时小于尾元素的值是左子树，大于尾元素的值为右子树，且序列前半部分均小于尾元素，后半部分均大于尾元素（如果同时存在左右子树的话），可以将序列划分左子树序列和右子树序列，然后递归比较师妹每一段均满足此性质。可以减少递归深度的办法：某段的元素个数如果<=3，则返回True；某整段的最小元素不小于尾元素或者整段的最大元素不大于尾元素，说明仅有左子树或者右子树，返回True。
 
 [面试题34：二叉树中和为某一值的路径](https://github.com/Jack-Lee-Hiter/AlgorithmsByPython/blob/master/Target%20Offer/%E4%BA%8C%E5%8F%89%E6%A0%91%E4%B8%AD%E5%92%8C%E4%B8%BA%E6%9F%90%E4%B8%80%E5%80%BC%E7%9A%84%E8%B7%AF%E5%BE%84.py)：递归
 
