@@ -21,6 +21,7 @@ class Solution:
         stack = []
         leftStack = self.pathSum(root.left, sum - root.val)
         for i in leftStack:
+            # 只有写成这样的形式才可以让根节点的值加到各个子节点列表索引中
             i.insert(0, root.val)
             stack.append(i)
         rightStack = self.pathSum(root.right, sum - root.val)
@@ -35,9 +36,11 @@ class Solution:
         if root.left == None and root.right == None:
             if sum == root.val:
                 return [[root.val]]
+            # 一个有数的列表加一个空列表为有数列表，空列表不受影响，便于后面各种加的操作
             else:
                 return []
         a = self.pathSum(root.left, sum - root.val) + self.pathSum(root.right, sum - root.val)
+        # 只有写成这样的形式才可以让根节点的值加到各个子节点列表索引中
         return [[root.val] + i for i in a]
 
 pNode1 = TreeNode(10)
