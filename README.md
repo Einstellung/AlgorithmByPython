@@ -160,9 +160,11 @@
 
 [面试题34：二叉树中和为某一值的路径](https://github.com/Jack-Lee-Hiter/AlgorithmsByPython/blob/master/Target%20Offer/%E4%BA%8C%E5%8F%89%E6%A0%91%E4%B8%AD%E5%92%8C%E4%B8%BA%E6%9F%90%E4%B8%80%E5%80%BC%E7%9A%84%E8%B7%AF%E5%BE%84.py)：递归
 
+### 分解让复杂问题简单化
+
 [面试题35：复杂链表的复制](https://github.com/Jack-Lee-Hiter/AlgorithmsByPython/blob/master/Target%20Offer/%E5%A4%8D%E6%9D%82%E9%93%BE%E8%A1%A8%E7%9A%84%E5%A4%8D%E5%88%B6.py)：注意链表结点进行复制的时候，不能简单地写作 pCloned = pNode，这样的话之后对pCloned的操作也会作用在pNode上面，导致操作循环往复。需要重新定一个pCloned = ListNode(0)，然后对结点的.val  .next   .random 进行设置。同时，在将复制的结点的random指向原始链表结点的random的next的时候，需要先判断一下，原始链表结点的next是否为None，不为None再指向。
 
-[面试题27：二叉搜索树与双向链表](https://github.com/Jack-Lee-Hiter/AlgorithmsByPython/blob/master/Target%20Offer/%E4%BA%8C%E5%8F%89%E6%90%9C%E7%B4%A2%E6%A0%91%E4%B8%8E%E5%8F%8C%E5%90%91%E9%93%BE%E8%A1%A8.py):按照左右子树分治，递归实现。根的左边连接左子树的最右边结点，右边连接右子树的最左边结点。
+[面试题36：二叉搜索树与双向链表](https://github.com/Jack-Lee-Hiter/AlgorithmsByPython/blob/master/Target%20Offer/%E4%BA%8C%E5%8F%89%E6%90%9C%E7%B4%A2%E6%A0%91%E4%B8%8E%E5%8F%8C%E5%90%91%E9%93%BE%E8%A1%A8.py):按照左右子树分治，递归实现。根的左边连接左子树的最右边结点，右边连接右子树的最左边结点。
 
 [面试题28：字符串的排列](https://github.com/Jack-Lee-Hiter/AlgorithmsByPython/blob/master/Target%20Offer/%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%9A%84%E6%8E%92%E5%88%97%E5%92%8C%E7%BB%84%E5%90%88.py)：依次取一个元素，然后依次和之前递归形成的所有子串组合，形成新的字符串。[扩展：字符串的组合](https://github.com/Jack-Lee-Hiter/AlgorithmsByPython/blob/master/Target%20Offer/%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%9A%84%E6%8E%92%E5%88%97%E5%92%8C%E7%BB%84%E5%90%88.py)
 
