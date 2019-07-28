@@ -10,36 +10,35 @@ class TreeNode:
         self.left = None
         self.right = None
 class Solution:
-    def Convert(self, pRootOfTree):
-        if pRootOfTree == None:
+    def Convert(self, root):
+        if not root:
             return None
-        if not pRootOfTree.left and not pRootOfTree.right:
-            return pRootOfTree
-
-        # 处理左子树
-        self.Convert(pRootOfTree.left)
-        left = pRootOfTree.left
-
-        # 连接根与左子树最大结点
+        if not root.left and not root.right:
+            return root
+         
+        # 将左子树构建成双链表，返回链表头
+        left = self.Convert(root.left)
+        p = left
+         
+        # 定位至左子树的最右的一个结点
+        while left and p.right:
+            p = p.right
+         
+        # 如果左子树不为空，将当前root加到左子树链表
         if left:
-            while left.right:
-                left = left.right
-            pRootOfTree.left, left.right = left, pRootOfTree
-
-        # 处理右子树
-        self.Convert(pRootOfTree.right)
-        right = pRootOfTree.right
-
-        # 连接根与右子树最小结点
+            p.right = root
+            root.left = p
+         
+        # 将右子树构造成双链表，返回链表头
+        right = self.Convert(root.right)
+        # 如果右子树不为空，将该链表追加到root结点之后
         if right:
-            while right.left:
-                right = right.left
-            pRootOfTree.right, right.left = right, pRootOfTree
+            right.left = root
+            root.right = right
 
-        while pRootOfTree.left:
-            pRootOfTree = pRootOfTree.left
-
-        return pRootOfTree
+        # 为什么返回left就可以双向链表头结点是因为，到后面已经构建起来双向链表了
+        # p可以顺着双向链表指向最右节点。left递归之后依旧保持在最左边位置    
+        return left if left else root
 
 pNode1 = TreeNode(8)
 pNode2 = TreeNode(6)
