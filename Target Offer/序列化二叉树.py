@@ -1,5 +1,6 @@
 '''
 请实现两个函数，分别用来序列化和反序列化二叉树。这里没有规定序列化的方式。
+使用前序遍历的方式来顺序化二叉树要效果好
 '''
 
 # -*- coding:utf-8 -*-
@@ -8,33 +9,48 @@ class TreeNode:
         self.val = x
         self.left = None
         self.right = None
+       
+    
 class Solution:
     def Serialize(self, root):
-        serializeStr = ''
-        if root == None:
-            return '#'
-        stack = []
-        while root or stack:
-            while root:
-                serializeStr += str(root.val) + ','
-                stack.append(root)
-                root = root.left
-            serializeStr += '#,'
-            root = stack.pop()
-            root = root.right
-        serializeStr = serializeStr[:-1]
-        return serializeStr
-
+        if not root:
+            return "#"
+        
+        return str(root.val) + "," + self.Serialize(root.left) + "," + self.Serialize(root.right)
+    
     def Deserialize(self, s):
-        serialize = s.split(',')
-        tree, sp = self.deserialize(serialize, 0)
-        return tree
+        list = s.split(",")
+        return self.deserializeTree(list)
+    
+    def deserializeTree(self, list):
+        # list遍历结束时
+        if len(list) <= 0:
+            return None
+        val = list.pop(0)
+        root = None
+        
+        if val != "#":
+            root = TreeNode(int(val))
+            root.left = self.deserializeTree(list)
+            root.right = self.deserializeTree(list)
+            
+        return root        
 
-    def deserialize(self, s, sp):
-        if sp >= len(s) or s[sp] == '#':
-            return None, sp + 1
-        node = TreeNode(int(s[sp]))
-        sp += 1
-        node.left, sp = self.deserialize(s, sp)
-        node.right, sp = self.deserialize(s, sp)
-        return node, sp
+pNode1 = TreeNode(1)
+pNode2 = TreeNode(2)
+pNode3 = TreeNode(3)
+pNode4 = TreeNode(4)
+pNode5 = TreeNode(5)
+pNode6 = TreeNode(6)
+
+pNode1.left = pNode2
+pNode1.right = pNode3
+pNode2.left = pNode4
+pNode3.left = pNode5
+pNode3.right = pNode6
+
+S = Solution()
+serialize = S.Serialize(pNode1)
+print(serialize)
+des = S.Deserialize(serialize)
+des.left.val
