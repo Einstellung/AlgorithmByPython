@@ -168,7 +168,7 @@
 
 [面试题37：序列化二叉树](https://github.com/Einstellung/AlgorithmByPython/blob/master/Target%20Offer/%E5%BA%8F%E5%88%97%E5%8C%96%E4%BA%8C%E5%8F%89%E6%A0%91.py)：最终要实现的是二叉树的序列化和反序列化。首先来看二叉树的序列化，二叉树的序列化就是采用前序遍历二叉树输出节点，再碰到左子节点或者右子节点为None的时候输出一个特殊字符"#"。对于反序列化，就是针对输入的一个序列构建一棵二叉树，我们可以设置一个指针先指向序列的最开始，然后把指针指向位置的数字转化为二叉树的结点，后移一个数字，继续转化为左子树和右子树。当遇到当前指向的字符为特殊字符"#"或者指针超出了序列的长度，则返回None，指针后移，继续遍历。
 
-[面试题38：字符串的排列](https://github.com/Jack-Lee-Hiter/AlgorithmsByPython/blob/master/Target%20Offer/%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%9A%84%E6%8E%92%E5%88%97%E5%92%8C%E7%BB%84%E5%90%88.py)：依次取一个元素，然后依次和之前递归形成的所有子串组合，形成新的字符串。[扩展：字符串的组合](https://github.com/Jack-Lee-Hiter/AlgorithmsByPython/blob/master/Target%20Offer/%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%9A%84%E6%8E%92%E5%88%97%E5%92%8C%E7%BB%84%E5%90%88.py)
+[面试题38：字符串的排列](https://github.com/Einstellung/AlgorithmByPython/blob/master/Target%20Offer/%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%9A%84%E6%8E%92%E5%88%97%E5%92%8C%E7%BB%84%E5%90%88.py)：依次取一个元素，然后依次和之前递归形成的所有子串组合，形成新的字符串。[扩展：字符串的组合](https://github.com/Jack-Lee-Hiter/AlgorithmsByPython/blob/master/Target%20Offer/%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%9A%84%E6%8E%92%E5%88%97%E5%92%8C%E7%BB%84%E5%90%88.py)
 
 ### 时间效率
 
