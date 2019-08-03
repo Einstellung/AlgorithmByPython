@@ -7,21 +7,25 @@
 # -*- coding:utf-8 -*-
 class Solution:
     def FindGreatestSumOfSubArray(self, array):
-        if array == None or len(array) <= 0:
+        if len(array) <= 0 or array == None:
             return 0
+        
+        result = array[0]  # 用来保存子数组中和的最大值
+        accumulation = 0   # 用来保存累加和，初始值为0
+        for i in range(1, len(array)):
+            num = array[i]
+            
+            # 如果累加的和小于0，就把累加和清空，之后赋值给下一个num
+            if accumulation < 0:
+                accumulation = 0
+            accumulation += num    
+             
+            # 如果最大的数值小于累加和，就把累加和赋值给结果result
+            if result < accumulation:
+                result = accumulation
+                
+        return result
 
-        nCurSum = 0
-        nGreatestSum = array[0]
-        for i in range(len(array)):
-            if nCurSum <= 0:
-                nCurSum = array[i]
-            else:
-                nCurSum += array[i]
-
-            if nCurSum > nGreatestSum:
-                nGreatestSum = nCurSum
-
-        return nGreatestSum
     # 动态规划解决问题
     def FindGreatestSumOfSubArray2(self, array):
         if array == None or len(array) <= 0:
