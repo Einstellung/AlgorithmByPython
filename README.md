@@ -180,17 +180,25 @@
 
 [面试题42：连续子数组的最大和](https://github.com/Jack-Lee-Hiter/AlgorithmsByPython/blob/master/Target%20Offer/%E8%BF%9E%E7%BB%AD%E5%AD%90%E6%95%B0%E7%BB%84%E7%9A%84%E6%9C%80%E5%A4%A7%E5%92%8C.py)：关键的问题在于成功分析整个过程。对于连续子数组，可以用一个数值来存储当前和，如果当前和小于零，那么在进行到下一个元素的时候，直接把当前和赋值为下一个元素，如果当前和大于零，则累加下一个元素，同时用一个maxNum存储最大值并随时更新。也可以利用动态规划解决。
 
-[面试题32：从1到n整数中1出现的次数](https://github.com/Jack-Lee-Hiter/AlgorithmsByPython/blob/master/Target%20Offer/%E6%95%B4%E6%95%B0%E4%B8%AD1%E5%87%BA%E7%8E%B0%E7%9A%84%E6%AC%A1%E6%95%B0.py)：利用[数字规律](http://blog.csdn.net/u012505432/article/details/51889052)实现更为简单。
+[面试题43：从1到n整数中1出现的次数](https://github.com/Jack-Lee-Hiter/AlgorithmsByPython/blob/master/Target%20Offer/%E6%95%B4%E6%95%B0%E4%B8%AD1%E5%87%BA%E7%8E%B0%E7%9A%84%E6%AC%A1%E6%95%B0.py)：利用[数字规律](http://blog.csdn.net/u012505432/article/details/51889052)实现更为简单。
 
-[面试题33：把数组排成最小数](https://github.com/Jack-Lee-Hiter/AlgorithmsByPython/blob/master/Target%20Offer/%E6%8A%8A%E6%95%B0%E7%BB%84%E6%8E%92%E6%88%90%E6%9C%80%E5%B0%8F%E7%9A%84%E6%95%B0.py)：首先将数组中的数字全部转换为字符串存储在一个新的数组中，然后比较每两个数字串的拼接的mn和nm的大小，若mn<nm，则m更小，反之n更小，然后把更小的数放入一个新的List中，最后输出即可。使用冒泡排序很方便。
+[面试题45：把数组排成最小数](https://github.com/Jack-Lee-Hiter/AlgorithmsByPython/blob/master/Target%20Offer/%E6%8A%8A%E6%95%B0%E7%BB%84%E6%8E%92%E6%88%90%E6%9C%80%E5%B0%8F%E7%9A%84%E6%95%B0.py)：首先将数组中的数字全部转换为字符串存储在一个新的数组中，然后比较每两个数字串的拼接的mn和nm的大小，若mn<nm，则m更小，反之n更小，然后把更小的数放入一个新的List中，最后输出即可。使用冒泡排序很方便。
 
-[面试题34：丑数](https://github.com/Jack-Lee-Hiter/AlgorithmsByPython/blob/master/Target%20Offer/%E4%B8%91%E6%95%B0.py)：空间换时间。建立一个长度为n的数组，保存这n个丑数。在进行运算的时候，某个位置需要求得丑数一定是前面某个丑数乘以2、3或者5的结果，我们分别记录之前乘以2后能得到的最大丑数M<sub>2</sub>，乘以3后能得到的最大丑数M<sub>3</sub>，乘以5后能得到的最大丑数M<sub>5</sub>，那么下一个丑数一定是M<sub>2</sub>，M<sub>3</sub>，M<sub>5</sub>中的最小的那一个。同时注意到，已有的丑数是按顺序存放在数组中的。对乘以2而言，肯定存在某一个丑数T<sub>2</sub>，排在他之前的每一个丑数乘以2得到的结果都会小于已有的最大丑数，在他之后的每一个丑数乘以2得到的结果都会太大，我们只需记下这个丑数的位置，每次生成新的丑数的时候，去更新这个T<sub>2</sub>。对于3和5同理。
+[面试题46：把数字翻译成字符串]
 
-[面试题35：第一个只出现一次的字符](https://github.com/Jack-Lee-Hiter/AlgorithmsByPython/blob/master/Target%20Offer/%E7%AC%AC%E4%B8%80%E4%B8%AA%E5%8F%AA%E5%87%BA%E7%8E%B0%E4%B8%80%E6%AC%A1%E7%9A%84%E5%AD%97%E7%AC%A6.py)：先遍历一遍字符串，用一个hash表存放每个出现的字符和字符出现的次数。再遍历一遍字符串，找到hash值等于1的输出即可。
+[面试题47：礼物的最大价值]
 
-[面试题36：数组中的逆序对](https://github.com/Jack-Lee-Hiter/AlgorithmsByPython/blob/master/Target%20Offer/%E6%95%B0%E7%BB%84%E4%B8%AD%E7%9A%84%E9%80%86%E5%BA%8F%E5%AF%B9.py)：这道题可以这么想，我们要找到数组中的逆序对，可以看做对数据进行排序，需要交换数组中的元素的次数，但是防止相同大小的元素发生交换，因此需要选择一个稳定的排序方法，记录发生交换的次数。那么，基于比较的稳定的排序方法中，最快的方法就是归并了，所以直接按照归并排序的思路，将数组分解、合并、排序即可。但是需要注意的是，在常规归并排序的时候，如果前一个元素大于后一个元素，直接进行交换即可，只进行了一次操作，但是对于这道题来讲，对于每一次的归并段，我们选择从后向前遍历，前面的归并段的某一个数值left[i]如果大于后面的某一个数值right[j]，因为在right自己独自排序的过程中，已经保证了right是有序的，所以j位置前面的数字全部小于right[j]，所以在这里逆序对的个数就会是 j-start-length，其中start是整个数组的起点，length是left的长度，然后再进行交换。
+[面试题48：最长不含重复字符串的子字符串]
 
-[面试题37：两个链表的第一个公共结点](https://github.com/Jack-Lee-Hiter/AlgorithmsByPython/blob/master/Target%20Offer/%E4%B8%A4%E4%B8%AA%E9%93%BE%E8%A1%A8%E7%9A%84%E7%AC%AC%E4%B8%80%E4%B8%AA%E5%85%AC%E5%85%B1%E7%BB%93%E7%82%B9.py)：首先依次遍历两个链表，记录两个链表的长度m和n，如果 m > n，那么我们就先让长度为m的链表走m-n个结点，然后两个链表同时遍历，当遍历到相同的结点的时候停止即可。对于 m < n，同理。
+### 时间效率和空间效率的平衡
+
+[面试题49：丑数](https://github.com/Jack-Lee-Hiter/AlgorithmsByPython/blob/master/Target%20Offer/%E4%B8%91%E6%95%B0.py)：空间换时间。建立一个长度为n的数组，保存这n个丑数。在进行运算的时候，某个位置需要求得丑数一定是前面某个丑数乘以2、3或者5的结果，我们分别记录之前乘以2后能得到的最大丑数M<sub>2</sub>，乘以3后能得到的最大丑数M<sub>3</sub>，乘以5后能得到的最大丑数M<sub>5</sub>，那么下一个丑数一定是M<sub>2</sub>，M<sub>3</sub>，M<sub>5</sub>中的最小的那一个。同时注意到，已有的丑数是按顺序存放在数组中的。对乘以2而言，肯定存在某一个丑数T<sub>2</sub>，排在他之前的每一个丑数乘以2得到的结果都会小于已有的最大丑数，在他之后的每一个丑数乘以2得到的结果都会太大，我们只需记下这个丑数的位置，每次生成新的丑数的时候，去更新这个T<sub>2</sub>。对于3和5同理。
+
+[面试题50：第一个只出现一次的字符](https://github.com/Jack-Lee-Hiter/AlgorithmsByPython/blob/master/Target%20Offer/%E7%AC%AC%E4%B8%80%E4%B8%AA%E5%8F%AA%E5%87%BA%E7%8E%B0%E4%B8%80%E6%AC%A1%E7%9A%84%E5%AD%97%E7%AC%A6.py)：先遍历一遍字符串，用一个hash表存放每个出现的字符和字符出现的次数。再遍历一遍字符串，找到hash值等于1的输出即可。
+
+[面试题51：数组中的逆序对](https://github.com/Jack-Lee-Hiter/AlgorithmsByPython/blob/master/Target%20Offer/%E6%95%B0%E7%BB%84%E4%B8%AD%E7%9A%84%E9%80%86%E5%BA%8F%E5%AF%B9.py)：这道题可以这么想，我们要找到数组中的逆序对，可以看做对数据进行排序，需要交换数组中的元素的次数，但是防止相同大小的元素发生交换，因此需要选择一个稳定的排序方法，记录发生交换的次数。那么，基于比较的稳定的排序方法中，最快的方法就是归并了，所以直接按照归并排序的思路，将数组分解、合并、排序即可。但是需要注意的是，在常规归并排序的时候，如果前一个元素大于后一个元素，直接进行交换即可，只进行了一次操作，但是对于这道题来讲，对于每一次的归并段，我们选择从后向前遍历，前面的归并段的某一个数值left[i]如果大于后面的某一个数值right[j]，因为在right自己独自排序的过程中，已经保证了right是有序的，所以j位置前面的数字全部小于right[j]，所以在这里逆序对的个数就会是 j-start-length，其中start是整个数组的起点，length是left的长度，然后再进行交换。
+
+[面试题52：两个链表的第一个公共结点](https://github.com/Jack-Lee-Hiter/AlgorithmsByPython/blob/master/Target%20Offer/%E4%B8%A4%E4%B8%AA%E9%93%BE%E8%A1%A8%E7%9A%84%E7%AC%AC%E4%B8%80%E4%B8%AA%E5%85%AC%E5%85%B1%E7%BB%93%E7%82%B9.py)：首先依次遍历两个链表，记录两个链表的长度m和n，如果 m > n，那么我们就先让长度为m的链表走m-n个结点，然后两个链表同时遍历，当遍历到相同的结点的时候停止即可。对于 m < n，同理。
 
 [面试题38：数字在排序数组中出现的次数](https://github.com/Jack-Lee-Hiter/AlgorithmsByPython/blob/master/Target%20Offer/%E6%95%B0%E5%AD%97%E5%9C%A8%E6%8E%92%E5%BA%8F%E6%95%B0%E7%BB%84%E4%B8%AD%E5%87%BA%E7%8E%B0%E7%9A%84%E6%AC%A1%E6%95%B0.py)：二分查找的扩展。可以构造两个函数。第一个函数查找目标数字出现的最前面的位置，先使用二分查找找到该数字，如果该数字的index > 0而且该数字前面一个数字等于k的话，那么就令end=middle-1，继续二分查找。对于第二个函数，查找目标数字出现的最后面的位置，反之编写。最后如果**数字存在**的话，令走后面的index减去最前面的index然后+1即可。**在进行有序数组的元素查找，可以先尝试一下二分查找**
 
