@@ -168,27 +168,37 @@
 
 [面试题37：序列化二叉树](https://github.com/Einstellung/AlgorithmByPython/blob/master/Target%20Offer/%E5%BA%8F%E5%88%97%E5%8C%96%E4%BA%8C%E5%8F%89%E6%A0%91.py)：最终要实现的是二叉树的序列化和反序列化。首先来看二叉树的序列化，二叉树的序列化就是采用前序遍历二叉树输出节点，再碰到左子节点或者右子节点为None的时候输出一个特殊字符"#"。对于反序列化，就是针对输入的一个序列构建一棵二叉树，我们可以设置一个指针先指向序列的最开始，然后把指针指向位置的数字转化为二叉树的结点，后移一个数字，继续转化为左子树和右子树。当遇到当前指向的字符为特殊字符"#"或者指针超出了序列的长度，则返回None，指针后移，继续遍历。
 
-[面试题38：字符串的排列](https://github.com/Jack-Lee-Hiter/AlgorithmsByPython/blob/master/Target%20Offer/%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%9A%84%E6%8E%92%E5%88%97%E5%92%8C%E7%BB%84%E5%90%88.py)：依次取一个元素，然后依次和之前递归形成的所有子串组合，形成新的字符串。[扩展：字符串的组合](https://github.com/Jack-Lee-Hiter/AlgorithmsByPython/blob/master/Target%20Offer/%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%9A%84%E6%8E%92%E5%88%97%E5%92%8C%E7%BB%84%E5%90%88.py)
+[面试题38：字符串的排列](https://github.com/Einstellung/AlgorithmByPython/blob/master/Target%20Offer/%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%9A%84%E6%8E%92%E5%88%97%E5%92%8C%E7%BB%84%E5%90%88.py)：依次取一个元素，然后依次和之前递归形成的所有子串组合，形成新的字符串。[扩展：字符串的组合](https://github.com/Jack-Lee-Hiter/AlgorithmsByPython/blob/master/Target%20Offer/%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%9A%84%E6%8E%92%E5%88%97%E5%92%8C%E7%BB%84%E5%90%88.py)
 
 ### 时间效率
 
 [面试题39：数组中出现次数超过一半的数字](https://github.com/Jack-Lee-Hiter/AlgorithmsByPython/blob/master/Target%20Offer/%E6%95%B0%E7%BB%84%E4%B8%AD%E5%87%BA%E7%8E%B0%E6%AC%A1%E6%95%B0%E8%B6%85%E8%BF%87%E4%B8%80%E5%8D%8A%E7%9A%84%E6%95%B0%E5%AD%97.py)：两种思路。第一种思路，出现次数超过一半的数字，不管如何，必然这个数字位于数组中间的位置，因此可以采用类似于快排的划分的方法，找到位于数组中间的位置的数字，然后在顺序检索是否这个数字出现次数超过一半。第二种思路根据数组的特点，出现次数超过一半的数，他出现的次数比其他数字出现的总和还要多，因此可以最开始保存两个数值：数组中的一个数字以及它出现的次数，然后遍历，如果下一个数字等于这个数字，那么次数加一，如果不等，次数减一，当次数等于0的时候，在下一个数字的时候重新复制新的数字以及出现的次数置为1，直到进行到最后，**然后再验证最后留下的数字是否出现次数超过一半**，因为可能前面的次数依次抵消掉，最后一个数字就直接是保留下来的数字，但是出现次数不一定超过一半。
 
-[面试题30：最小的k个数](https://github.com/Jack-Lee-Hiter/AlgorithmsByPython/blob/master/Target%20Offer/%E6%9C%80%E5%B0%8F%E7%9A%84k%E4%B8%AA%E6%95%B0.py)：两种方法。第一种方法是基于划分的方法，如果是查找第k个数字，第一次划分之后，划分的位置如果大于k，那么就在前面的子数组中进行继续划分，反之则在后面的子数组继续划分，时间复杂度O(n)；第二种方法是可以适用于**海量数据**的方法，该方法基于二叉树或者堆来实现，首先把数组前k个数字构建一个最大堆，然后从第k+1个数字开始遍历数组，如果遍历到的元素小于堆顶的数字，那么久将换两个数字，重新构造堆，继续遍历，最后剩下的堆就是最小的k个数，时间复杂度O(nlog k)。
+[面试题40：最小的k个数](https://github.com/Jack-Lee-Hiter/AlgorithmsByPython/blob/master/Target%20Offer/%E6%9C%80%E5%B0%8F%E7%9A%84k%E4%B8%AA%E6%95%B0.py)：两种方法。第一种方法是基于划分的方法，如果是查找第k个数字，第一次划分之后，划分的位置如果大于k，那么就在前面的子数组中进行继续划分，反之则在后面的子数组继续划分，时间复杂度O(n)；第二种方法是可以适用于**海量数据**的方法，该方法基于二叉树或者堆来实现，首先把数组前k个数字构建一个最大堆，然后从第k+1个数字开始遍历数组，如果遍历到的元素小于堆顶的数字，那么久将换两个数字，重新构造堆，继续遍历，最后剩下的堆就是最小的k个数，时间复杂度O(nlog k)。
 
-[面试题31：连续子数组的最大和](https://github.com/Jack-Lee-Hiter/AlgorithmsByPython/blob/master/Target%20Offer/%E8%BF%9E%E7%BB%AD%E5%AD%90%E6%95%B0%E7%BB%84%E7%9A%84%E6%9C%80%E5%A4%A7%E5%92%8C.py)：关键的问题在于成功分析整个过程。对于连续子数组，可以用一个数值来存储当前和，如果当前和小于零，那么在进行到下一个元素的时候，直接把当前和赋值为下一个元素，如果当前和大于零，则累加下一个元素，同时用一个maxNum存储最大值并随时更新。也可以利用动态规划解决。
+[面试题41：数据流中的中位数](https://github.com/Jack-Lee-Hiter/AlgorithmsByPython/blob/master/Target%20Offer/%E6%95%B0%E6%8D%AE%E6%B5%81%E4%B8%AD%E7%9A%84%E4%B8%AD%E4%BD%8D%E6%95%B0.py)：构建一个最大堆和一个最小堆，分别存储比中位数小的数和大的数。当目前两堆总数为偶数的时候，把数字存入最大堆，然后重排最大堆，如果最大堆的堆顶数字大于最小堆堆顶数字，则把两个堆顶数字交换，重排两堆，此时两堆数字总数为奇数，直接输出最大堆堆顶数字即为中位数；如果当前两堆总数为技术的时候，把数字存入最小堆，重排最小堆，如果最大堆的堆顶数字大于最小堆堆顶数字，则把两个堆顶数字交换，重排两堆，此时两堆数字总数为偶数，取两堆堆顶数字做平均即为中位数。
 
-[面试题32：从1到n整数中1出现的次数](https://github.com/Jack-Lee-Hiter/AlgorithmsByPython/blob/master/Target%20Offer/%E6%95%B4%E6%95%B0%E4%B8%AD1%E5%87%BA%E7%8E%B0%E7%9A%84%E6%AC%A1%E6%95%B0.py)：利用[数字规律](http://blog.csdn.net/u012505432/article/details/51889052)实现更为简单。
+[面试题42：连续子数组的最大和](https://github.com/Jack-Lee-Hiter/AlgorithmsByPython/blob/master/Target%20Offer/%E8%BF%9E%E7%BB%AD%E5%AD%90%E6%95%B0%E7%BB%84%E7%9A%84%E6%9C%80%E5%A4%A7%E5%92%8C.py)：关键的问题在于成功分析整个过程。对于连续子数组，可以用一个数值来存储当前和，如果当前和小于零，那么在进行到下一个元素的时候，直接把当前和赋值为下一个元素，如果当前和大于零，则累加下一个元素，同时用一个maxNum存储最大值并随时更新。也可以利用动态规划解决。
 
-[面试题33：把数组排成最小数](https://github.com/Jack-Lee-Hiter/AlgorithmsByPython/blob/master/Target%20Offer/%E6%8A%8A%E6%95%B0%E7%BB%84%E6%8E%92%E6%88%90%E6%9C%80%E5%B0%8F%E7%9A%84%E6%95%B0.py)：首先将数组中的数字全部转换为字符串存储在一个新的数组中，然后比较每两个数字串的拼接的mn和nm的大小，若mn<nm，则m更小，反之n更小，然后把更小的数放入一个新的List中，最后输出即可。使用冒泡排序很方便。
+[面试题43：从1到n整数中1出现的次数](https://github.com/Jack-Lee-Hiter/AlgorithmsByPython/blob/master/Target%20Offer/%E6%95%B4%E6%95%B0%E4%B8%AD1%E5%87%BA%E7%8E%B0%E7%9A%84%E6%AC%A1%E6%95%B0.py)：利用[数字规律](http://blog.csdn.net/u012505432/article/details/51889052)实现更为简单。
 
-[面试题34：丑数](https://github.com/Jack-Lee-Hiter/AlgorithmsByPython/blob/master/Target%20Offer/%E4%B8%91%E6%95%B0.py)：空间换时间。建立一个长度为n的数组，保存这n个丑数。在进行运算的时候，某个位置需要求得丑数一定是前面某个丑数乘以2、3或者5的结果，我们分别记录之前乘以2后能得到的最大丑数M<sub>2</sub>，乘以3后能得到的最大丑数M<sub>3</sub>，乘以5后能得到的最大丑数M<sub>5</sub>，那么下一个丑数一定是M<sub>2</sub>，M<sub>3</sub>，M<sub>5</sub>中的最小的那一个。同时注意到，已有的丑数是按顺序存放在数组中的。对乘以2而言，肯定存在某一个丑数T<sub>2</sub>，排在他之前的每一个丑数乘以2得到的结果都会小于已有的最大丑数，在他之后的每一个丑数乘以2得到的结果都会太大，我们只需记下这个丑数的位置，每次生成新的丑数的时候，去更新这个T<sub>2</sub>。对于3和5同理。
+[面试题45：把数组排成最小数](https://github.com/Jack-Lee-Hiter/AlgorithmsByPython/blob/master/Target%20Offer/%E6%8A%8A%E6%95%B0%E7%BB%84%E6%8E%92%E6%88%90%E6%9C%80%E5%B0%8F%E7%9A%84%E6%95%B0.py)：首先将数组中的数字全部转换为字符串存储在一个新的数组中，然后比较每两个数字串的拼接的mn和nm的大小，若mn<nm，则m更小，反之n更小，然后把更小的数放入一个新的List中，最后输出即可。使用冒泡排序很方便。
 
-[面试题35：第一个只出现一次的字符](https://github.com/Jack-Lee-Hiter/AlgorithmsByPython/blob/master/Target%20Offer/%E7%AC%AC%E4%B8%80%E4%B8%AA%E5%8F%AA%E5%87%BA%E7%8E%B0%E4%B8%80%E6%AC%A1%E7%9A%84%E5%AD%97%E7%AC%A6.py)：先遍历一遍字符串，用一个hash表存放每个出现的字符和字符出现的次数。再遍历一遍字符串，找到hash值等于1的输出即可。
+[面试题46：把数字翻译成字符串]
 
-[面试题36：数组中的逆序对](https://github.com/Jack-Lee-Hiter/AlgorithmsByPython/blob/master/Target%20Offer/%E6%95%B0%E7%BB%84%E4%B8%AD%E7%9A%84%E9%80%86%E5%BA%8F%E5%AF%B9.py)：这道题可以这么想，我们要找到数组中的逆序对，可以看做对数据进行排序，需要交换数组中的元素的次数，但是防止相同大小的元素发生交换，因此需要选择一个稳定的排序方法，记录发生交换的次数。那么，基于比较的稳定的排序方法中，最快的方法就是归并了，所以直接按照归并排序的思路，将数组分解、合并、排序即可。但是需要注意的是，在常规归并排序的时候，如果前一个元素大于后一个元素，直接进行交换即可，只进行了一次操作，但是对于这道题来讲，对于每一次的归并段，我们选择从后向前遍历，前面的归并段的某一个数值left[i]如果大于后面的某一个数值right[j]，因为在right自己独自排序的过程中，已经保证了right是有序的，所以j位置前面的数字全部小于right[j]，所以在这里逆序对的个数就会是 j-start-length，其中start是整个数组的起点，length是left的长度，然后再进行交换。
+[面试题47：礼物的最大价值]
 
-[面试题37：两个链表的第一个公共结点](https://github.com/Jack-Lee-Hiter/AlgorithmsByPython/blob/master/Target%20Offer/%E4%B8%A4%E4%B8%AA%E9%93%BE%E8%A1%A8%E7%9A%84%E7%AC%AC%E4%B8%80%E4%B8%AA%E5%85%AC%E5%85%B1%E7%BB%93%E7%82%B9.py)：首先依次遍历两个链表，记录两个链表的长度m和n，如果 m > n，那么我们就先让长度为m的链表走m-n个结点，然后两个链表同时遍历，当遍历到相同的结点的时候停止即可。对于 m < n，同理。
+[面试题48：最长不含重复字符串的子字符串]
+
+### 时间效率和空间效率的平衡
+
+[面试题49：丑数](https://github.com/Jack-Lee-Hiter/AlgorithmsByPython/blob/master/Target%20Offer/%E4%B8%91%E6%95%B0.py)：空间换时间。建立一个长度为n的数组，保存这n个丑数。在进行运算的时候，某个位置需要求得丑数一定是前面某个丑数乘以2、3或者5的结果，我们分别记录之前乘以2后能得到的最大丑数M<sub>2</sub>，乘以3后能得到的最大丑数M<sub>3</sub>，乘以5后能得到的最大丑数M<sub>5</sub>，那么下一个丑数一定是M<sub>2</sub>，M<sub>3</sub>，M<sub>5</sub>中的最小的那一个。同时注意到，已有的丑数是按顺序存放在数组中的。对乘以2而言，肯定存在某一个丑数T<sub>2</sub>，排在他之前的每一个丑数乘以2得到的结果都会小于已有的最大丑数，在他之后的每一个丑数乘以2得到的结果都会太大，我们只需记下这个丑数的位置，每次生成新的丑数的时候，去更新这个T<sub>2</sub>。对于3和5同理。
+
+[面试题50：第一个只出现一次的字符](https://github.com/Jack-Lee-Hiter/AlgorithmsByPython/blob/master/Target%20Offer/%E7%AC%AC%E4%B8%80%E4%B8%AA%E5%8F%AA%E5%87%BA%E7%8E%B0%E4%B8%80%E6%AC%A1%E7%9A%84%E5%AD%97%E7%AC%A6.py)：先遍历一遍字符串，用一个hash表存放每个出现的字符和字符出现的次数。再遍历一遍字符串，找到hash值等于1的输出即可。
+
+[面试题51：数组中的逆序对](https://github.com/Jack-Lee-Hiter/AlgorithmsByPython/blob/master/Target%20Offer/%E6%95%B0%E7%BB%84%E4%B8%AD%E7%9A%84%E9%80%86%E5%BA%8F%E5%AF%B9.py)：这道题可以这么想，我们要找到数组中的逆序对，可以看做对数据进行排序，需要交换数组中的元素的次数，但是防止相同大小的元素发生交换，因此需要选择一个稳定的排序方法，记录发生交换的次数。那么，基于比较的稳定的排序方法中，最快的方法就是归并了，所以直接按照归并排序的思路，将数组分解、合并、排序即可。但是需要注意的是，在常规归并排序的时候，如果前一个元素大于后一个元素，直接进行交换即可，只进行了一次操作，但是对于这道题来讲，对于每一次的归并段，我们选择从后向前遍历，前面的归并段的某一个数值left[i]如果大于后面的某一个数值right[j]，因为在right自己独自排序的过程中，已经保证了right是有序的，所以j位置前面的数字全部小于right[j]，所以在这里逆序对的个数就会是 j-start-length，其中start是整个数组的起点，length是left的长度，然后再进行交换。
+
+[面试题52：两个链表的第一个公共结点](https://github.com/Jack-Lee-Hiter/AlgorithmsByPython/blob/master/Target%20Offer/%E4%B8%A4%E4%B8%AA%E9%93%BE%E8%A1%A8%E7%9A%84%E7%AC%AC%E4%B8%80%E4%B8%AA%E5%85%AC%E5%85%B1%E7%BB%93%E7%82%B9.py)：首先依次遍历两个链表，记录两个链表的长度m和n，如果 m > n，那么我们就先让长度为m的链表走m-n个结点，然后两个链表同时遍历，当遍历到相同的结点的时候停止即可。对于 m < n，同理。
 
 [面试题38：数字在排序数组中出现的次数](https://github.com/Jack-Lee-Hiter/AlgorithmsByPython/blob/master/Target%20Offer/%E6%95%B0%E5%AD%97%E5%9C%A8%E6%8E%92%E5%BA%8F%E6%95%B0%E7%BB%84%E4%B8%AD%E5%87%BA%E7%8E%B0%E7%9A%84%E6%AC%A1%E6%95%B0.py)：二分查找的扩展。可以构造两个函数。第一个函数查找目标数字出现的最前面的位置，先使用二分查找找到该数字，如果该数字的index > 0而且该数字前面一个数字等于k的话，那么就令end=middle-1，继续二分查找。对于第二个函数，查找目标数字出现的最后面的位置，反之编写。最后如果**数字存在**的话，令走后面的index减去最前面的index然后+1即可。**在进行有序数组的元素查找，可以先尝试一下二分查找**
 
@@ -237,7 +247,6 @@
 
 [面试题63：二叉搜索树的第k个结点](https://github.com/Jack-Lee-Hiter/AlgorithmsByPython/blob/master/Target%20Offer/%E4%BA%8C%E5%8F%89%E6%90%9C%E7%B4%A2%E6%A0%91%E7%9A%84%E7%AC%ACk%E4%B8%AA%E7%BB%93%E7%82%B9.py)：中序遍历输出一个序列，然后找到序列中第k个数即可。
 
-[面试题64：数据流中的中位数](https://github.com/Jack-Lee-Hiter/AlgorithmsByPython/blob/master/Target%20Offer/%E6%95%B0%E6%8D%AE%E6%B5%81%E4%B8%AD%E7%9A%84%E4%B8%AD%E4%BD%8D%E6%95%B0.py)：构建一个最大堆和一个最小堆，分别存储比中位数小的数和大的数。当目前两堆总数为偶数的时候，把数字存入最大堆，然后重排最大堆，如果最大堆的堆顶数字大于最小堆堆顶数字，则把两个堆顶数字交换，重排两堆，此时两堆数字总数为奇数，直接输出最大堆堆顶数字即为中位数；如果当前两堆总数为技术的时候，把数字存入最小堆，重排最小堆，如果最大堆的堆顶数字大于最小堆堆顶数字，则把两个堆顶数字交换，重排两堆，此时两堆数字总数为偶数，取两堆堆顶数字做平均即为中位数。
 
 [面试题65：滑动窗口的最大值](https://github.com/Jack-Lee-Hiter/AlgorithmsByPython/blob/master/Target%20Offer/%E6%BB%91%E5%8A%A8%E7%AA%97%E5%8F%A3%E7%9A%84%E6%9C%80%E5%A4%A7%E5%80%BC.py)：我们把可能成为滑动窗口的最大值的数值下标存入一个两端开口的队列index中。首先遍历输入数组，在遍历次数小于窗口长度的时候，如果index数组里面含有元素而且元素后面的下标值对应的输入数组的数如果小于当前遍历到的输入数组元素值，那么就把尾部的元素下标值不断pop出来，再压入当前输入元素对应的下标值。然后再从等于滑动窗口大小的位置继续遍历输入数组。首先把index数组的头元素下标值对应输入数组值压入输出数组。同样的，如果index数组里面含有元素而且元素后面的下标值对应的输入数组的数如果小于当前遍历到的输入数组元素值，那么就把尾部的元素下标值不断pop出来，同时，如果index数组内有元素，而且当一个数字的下标与当前处理的数字的下标只差大于或等于滑动窗口的大小时，这个数字已经从窗口中画出，可以从队列中删除了，再压入当前输入元素对应的下标值。**最后还需要在输出数组中append一下index手元素下标对应的输入元素值**。
 
