@@ -5,47 +5,49 @@
 class Solution:
     # O(n)的算法, 只有当我们可以修改输入的数组时可用
     # 基于Partition的方法
-    def GetLeastNumbers_Solution(self, tinput, k):
-        if tinput == None or len(tinput) < k or len(tinput) <= 0 or k <=0:
+    def GetLeastNumbers(self, alist, k):
+        if alist == None or len(alist) <= 0 or len(alist) < k or k <= 0:
             return []
-        n = len(tinput)
-        start = 0
-        end = n - 1
-        index = self.Partition(tinput, n, start, end)
-        while index != k-1:
-            if index > k-1:
-                end = index - 1
-                index = self.Partition(tinput, n, start, end)
+        
+        first = 0
+        last = len(alist) - 1
+        
+        # 获取一次划分，但这个index不一定刚好就是k位置
+        # 需要后面逐步缩小范围
+        index = self.partition(alist, first, last)
+        while index != k - 1:
+            if index > k - 1:
+                last = index - 1
+                index = self.partition(alist, first, last)
             else:
-                start = index + 1
-                index = self.Partition(tinput, n, start, end)
-        output = tinput[:k]
-        output.sort()
-        return output
+                first = index + 1
+                index  = self.partition(alist, first, last)
+                
+        output = alist[:k]
+        return output      
+        
+    def partition(self, alist, first, last):
+        base = alist[first]
 
-    def Partition(self, numbers, length, start, end):
-        if numbers == None or length <= 0 or start < 0 or end >= length:
-            return None
-        if end == start:
-            return end
-        pivotvlue = numbers[start]
-        leftmark = start + 1
-        rightmark = end
+        leftmark = first
+        rightmark = last
 
-        done = False
-
-        while not done:
-            while numbers[leftmark] <= pivotvlue and leftmark <= rightmark:
+        while leftmark < rightmark:  # 要求左指针必须小于等于右指针，之所以没有等号是因为，在最后一次指针移动的时候就会取等，
+                                     # 不满足小于条件的时候其实已经取等了
+            if alist[leftmark] <= base:
                 leftmark += 1
-            while numbers[rightmark] >= pivotvlue and rightmark >= leftmark:
+            if alist[rightmark] >= base:
                 rightmark -= 1
 
-            if leftmark > rightmark:
-                done = True
-            else:
-                numbers[leftmark], numbers[rightmark] = numbers[rightmark], numbers[leftmark]
-        numbers[rightmark], numbers[start] = numbers[start], numbers[rightmark]
-        return rightmark
+            else:      # 当左右指针都停止的时候，交换左右指针所对应的值
+                alist[leftmark], alist[rightmark] = alist[rightmark], alist[leftmark]
+
+        # 当左指针和右指针重合的时候，交换右指针对应的值和base对应的值
+        alist[rightmark], alist[first] = alist[first], alist[rightmark]
+
+        return rightmark    # rightmark是作为递归排序的标记，所以返回。最后输出alist就是直接排序排好的
+
+        
     # O(nlogk)的算法, 适合海量数据
     # 利用一个k容量的容器存放数组, 构造最大堆, 当下一个数据大于最大数, 跳过, 小于最大数, 则进入容器替换之前的最大数
     def GetLeastNumbers(self, tinput, k):
@@ -70,8 +72,8 @@ class Solution:
                 else:
                     output[0] = number
         return output[::-1]     # 最小堆用 return output
-tinput = [4,5,1,6,2,7,3,8]
+
+
+alist = [4,5,1,6,2,7,3,8]
 s = Solution()
-print(s.GetLeastNumbers_Solution(tinput, 4))
-print(s.GetLeastNumbers(tinput, 4))
-print(s.GetLeastNumbers(tinput, 5))
+print(s.GetLeastNumbers(alist, 4))
