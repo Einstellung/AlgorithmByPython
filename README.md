@@ -186,7 +186,8 @@
 
 [面试题46：把数字翻译成字符串]
 
-[面试题47：礼物的最大价值]
+[面试题47：礼物的最大价值](https://github.com/Einstellung/AlgorithmByPython/blob/master/Target%20Offer/%E7%A4%BC%E7%89%A9%E7%9A%84%E6%9C%80%E5%A4%A7%E4%BB%B7%E5%80%BC.py)  
+一篇不错的思路[讲解](https://blog.csdn.net/dugudaibo/article/details/79678890)
 
 [面试题48：最长不含重复字符串的子字符串]
 
