@@ -189,7 +189,8 @@
 [面试题47：礼物的最大价值](https://github.com/Einstellung/AlgorithmByPython/blob/master/Target%20Offer/%E7%A4%BC%E7%89%A9%E7%9A%84%E6%9C%80%E5%A4%A7%E4%BB%B7%E5%80%BC.py)  
 一篇不错的思路[讲解](https://blog.csdn.net/dugudaibo/article/details/79678890)
 
-[面试题48：最长不含重复字符串的子字符串]
+[面试题48：最长不含重复字符串的子字符串](https://github.com/Einstellung/AlgorithmByPython/blob/master/Target%20Offer/%E6%9C%80%E9%95%BF%E4%B8%8D%E5%90%AB%E9%87%8D%E5%A4%8D%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%9A%84%E5%AD%90%E5%AD%97%E7%AC%A6%E4%B8%B2.py)  
+[讲解链接](https://xiaozhuanlan.com/topic/0594827163)
 
 ### 时间效率和空间效率的平衡
 
