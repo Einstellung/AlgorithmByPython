@@ -189,11 +189,12 @@
 [面试题47：礼物的最大价值](https://github.com/Einstellung/AlgorithmByPython/blob/master/Target%20Offer/%E7%A4%BC%E7%89%A9%E7%9A%84%E6%9C%80%E5%A4%A7%E4%BB%B7%E5%80%BC.py)  
 一篇不错的思路[讲解](https://blog.csdn.net/dugudaibo/article/details/79678890)
 
-[面试题48：最长不含重复字符串的子字符串]
+[面试题48：最长不含重复字符串的子字符串](https://github.com/Einstellung/AlgorithmByPython/blob/master/Target%20Offer/%E6%9C%80%E9%95%BF%E4%B8%8D%E5%90%AB%E9%87%8D%E5%A4%8D%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%9A%84%E5%AD%90%E5%AD%97%E7%AC%A6%E4%B8%B2.py)  
+[讲解链接](https://xiaozhuanlan.com/topic/0594827163)
 
 ### 时间效率和空间效率的平衡
 
-[面试题49：丑数](https://github.com/Jack-Lee-Hiter/AlgorithmsByPython/blob/master/Target%20Offer/%E4%B8%91%E6%95%B0.py)：空间换时间。建立一个长度为n的数组，保存这n个丑数。在进行运算的时候，某个位置需要求得丑数一定是前面某个丑数乘以2、3或者5的结果，我们分别记录之前乘以2后能得到的最大丑数M<sub>2</sub>，乘以3后能得到的最大丑数M<sub>3</sub>，乘以5后能得到的最大丑数M<sub>5</sub>，那么下一个丑数一定是M<sub>2</sub>，M<sub>3</sub>，M<sub>5</sub>中的最小的那一个。同时注意到，已有的丑数是按顺序存放在数组中的。对乘以2而言，肯定存在某一个丑数T<sub>2</sub>，排在他之前的每一个丑数乘以2得到的结果都会小于已有的最大丑数，在他之后的每一个丑数乘以2得到的结果都会太大，我们只需记下这个丑数的位置，每次生成新的丑数的时候，去更新这个T<sub>2</sub>。对于3和5同理。
+[面试题49：丑数](https://github.com/Jack-Lee-Hiter/AlgorithmsByPython/blob/master/Target%20Offer/%E4%B8%91%E6%95%B0.py)：空间换时间。建立一个长度为n的数组，保存这n个丑数。在进行运算的时候，某个位置需要求得丑数一定是前面某个丑数乘以2、3或者5的结果，我们分别记录之前乘以2后能得到的最大丑数M<sub>2</sub>，乘以3后能得到的最大丑数M<sub>3</sub>，乘以5后能得到的最大丑数M<sub>5</sub>，那么下一个丑数一定是M<sub>2</sub>，M<sub>3</sub>，M<sub>5</sub>中的最小的那一个。同时注意到，已有的丑数是按顺序存放在数组中的。对乘以2而言，肯定存在某一个丑数T<sub>2</sub>，排在他之前的每一个丑数乘以2得到的结果都会小于已有的最大丑数，在他之后的每一个丑数乘以2得到的结果都会太大，我们只需记下这个丑数的位置，每次生成新的丑数的时候，去更新这个T<sub>2</sub>。对于3和5同理。[内容讲解链接](https://www.nowcoder.com/questionTerminal/6aa9e04fc3794f68acf8778237ba065b?f=discussion)
 
 [面试题50：第一个只出现一次的字符](https://github.com/Jack-Lee-Hiter/AlgorithmsByPython/blob/master/Target%20Offer/%E7%AC%AC%E4%B8%80%E4%B8%AA%E5%8F%AA%E5%87%BA%E7%8E%B0%E4%B8%80%E6%AC%A1%E7%9A%84%E5%AD%97%E7%AC%A6.py)：先遍历一遍字符串，用一个hash表存放每个出现的字符和字符出现的次数。再遍历一遍字符串，找到hash值等于1的输出即可。
 
