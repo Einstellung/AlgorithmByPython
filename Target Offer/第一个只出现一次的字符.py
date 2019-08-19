@@ -4,19 +4,28 @@
 
 # -*- coding:utf-8 -*-
 class Solution:
-    def FirstNotRepeatingChar(self, s):
-        if s == None or len(s) <= 0:
-            return -1
+    def FirstNotRepeatingChar(self, string):
+        if len(string) <= 0 or string == None:
+            return 0
+        
         alphabet = {}
-        alist = list(s)
-        for i in alist:
+        
+        
+        # 注意字典是无序的，所以没有办法找到第一次出现的字母
+        # 但是string字符串很好的保留了顺序
+        for i in string:
             if i not in alphabet.keys():
-                alphabet[i] = 0
+                alphabet[i] = 1
+                # 防止后面再+1，所以第一次找到直接就跳出本次判断
+                continue 
+                
             alphabet[i] += 1
-        for i in alist:
+            
+        for i in string:
             if alphabet[i] == 1:
                 return i
-        return -1
+   
+        return 0
 
-s = Solution()
-print(s.FirstNotRepeatingChar('abaccdeff'))
+test = Solution()
+print(test.FirstNotRepeatingChar("abaccdeff"))
