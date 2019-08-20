@@ -16,7 +16,7 @@ class Solution:
         while len(self.alist) > 0 and self.adict[self.alist[0]] > 1:
             self.alist.pop(0)
         if len(self.alist) == 0:
-            return "all chars are repeated"
+            return "#"
         else:
             return self.alist[0]
             
