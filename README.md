@@ -196,7 +196,7 @@
 
 [面试题49：丑数](https://github.com/Jack-Lee-Hiter/AlgorithmsByPython/blob/master/Target%20Offer/%E4%B8%91%E6%95%B0.py)：空间换时间。建立一个长度为n的数组，保存这n个丑数。在进行运算的时候，某个位置需要求得丑数一定是前面某个丑数乘以2、3或者5的结果，我们分别记录之前乘以2后能得到的最大丑数M<sub>2</sub>，乘以3后能得到的最大丑数M<sub>3</sub>，乘以5后能得到的最大丑数M<sub>5</sub>，那么下一个丑数一定是M<sub>2</sub>，M<sub>3</sub>，M<sub>5</sub>中的最小的那一个。同时注意到，已有的丑数是按顺序存放在数组中的。对乘以2而言，肯定存在某一个丑数T<sub>2</sub>，排在他之前的每一个丑数乘以2得到的结果都会小于已有的最大丑数，在他之后的每一个丑数乘以2得到的结果都会太大，我们只需记下这个丑数的位置，每次生成新的丑数的时候，去更新这个T<sub>2</sub>。对于3和5同理。[内容讲解链接](https://www.nowcoder.com/questionTerminal/6aa9e04fc3794f68acf8778237ba065b?f=discussion)
 
-[面试题50：第一个只出现一次的字符](https://github.com/Jack-Lee-Hiter/AlgorithmsByPython/blob/master/Target%20Offer/%E7%AC%AC%E4%B8%80%E4%B8%AA%E5%8F%AA%E5%87%BA%E7%8E%B0%E4%B8%80%E6%AC%A1%E7%9A%84%E5%AD%97%E7%AC%A6.py)：先遍历一遍字符串，用一个hash表存放每个出现的字符和字符出现的次数。再遍历一遍字符串，找到hash值等于1的输出即可。
+[面试题50：第一个只出现一次的字符](https://github.com/Einstellung/AlgorithmByPython/blob/master/Target%20Offer/%E7%AC%AC%E4%B8%80%E4%B8%AA%E5%8F%AA%E5%87%BA%E7%8E%B0%E4%B8%80%E6%AC%A1%E7%9A%84%E5%AD%97%E7%AC%A6.py)：先遍历一遍字符串，用一个hash表存放每个出现的字符和字符出现的次数。再遍历一遍字符串，找到hash值等于1的输出即可。
 
 [面试题51：数组中的逆序对](https://github.com/Jack-Lee-Hiter/AlgorithmsByPython/blob/master/Target%20Offer/%E6%95%B0%E7%BB%84%E4%B8%AD%E7%9A%84%E9%80%86%E5%BA%8F%E5%AF%B9.py)：这道题可以这么想，我们要找到数组中的逆序对，可以看做对数据进行排序，需要交换数组中的元素的次数，但是防止相同大小的元素发生交换，因此需要选择一个稳定的排序方法，记录发生交换的次数。那么，基于比较的稳定的排序方法中，最快的方法就是归并了，所以直接按照归并排序的思路，将数组分解、合并、排序即可。但是需要注意的是，在常规归并排序的时候，如果前一个元素大于后一个元素，直接进行交换即可，只进行了一次操作，但是对于这道题来讲，对于每一次的归并段，我们选择从后向前遍历，前面的归并段的某一个数值left[i]如果大于后面的某一个数值right[j]，因为在right自己独自排序的过程中，已经保证了right是有序的，所以j位置前面的数字全部小于right[j]，所以在这里逆序对的个数就会是 j-start-length，其中start是整个数组的起点，length是left的长度，然后再进行交换。
 
