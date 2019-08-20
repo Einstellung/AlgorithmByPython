@@ -39,7 +39,8 @@
 
 [插入排序](https://github.com/Jack-Lee-Hiter/AlgorithmsByPython/blob/master/InsertionSort.py)
 
-[归并排序](https://github.com/Jack-Lee-Hiter/AlgorithmsByPython/blob/master/MergeSort.py)
+[归并排序](https://github.com/Einstellung/AlgorithmByPython/blob/master/MergeSort.py)  
+[视频讲解链接](https://www.bilibili.com/video/av62759440?from=search&seid=1673806169767061126)
 
 [解析树ParseTree](https://github.com/Jack-Lee-Hiter/AlgorithmsByPython/blob/master/ParseTree.py)
 
