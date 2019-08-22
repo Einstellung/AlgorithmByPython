@@ -210,7 +210,7 @@
 [题目一：数字在排序数组中出现的次数](https://github.com/Einstellung/AlgorithmByPython/blob/master/Target%20Offer/%E6%95%B0%E5%AD%97%E5%9C%A8%E6%8E%92%E5%BA%8F%E6%95%B0%E7%BB%84%E4%B8%AD%E5%87%BA%E7%8E%B0%E7%9A%84%E6%AC%A1%E6%95%B0.py)：二分查找的扩展。可以构造两个函数。第一个函数查找目标数字出现的最前面的位置，先使用二分查找找到该数字，如果该数字的index > 0而且该数字前面一个数字等于k的话，那么就令end=middle-1，继续二分查找。对于第二个函数，查找目标数字出现的最后面的位置，反之编写。最后如果**数字存在**的话，令走后面的index减去最前面的index然后+1即可。**在进行有序数组的元素查找，可以先尝试一下二分查找**  
 [题目三：数组中数值和下标相等的元素](https://github.com/Einstellung/AlgorithmByPython/blob/master/Target%20Offer/%E6%95%B0%E7%BB%84%E4%B8%AD%E6%95%B0%E5%80%BC%E5%92%8C%E4%B8%8B%E6%A0%87%E7%9B%B8%E7%AD%89%E7%9A%84%E5%85%83%E7%B4%A0.py)
 
-[面试题54：二叉搜索树的第k个结点](https://github.com/Jack-Lee-Hiter/AlgorithmsByPython/blob/master/Target%20Offer/%E4%BA%8C%E5%8F%89%E6%90%9C%E7%B4%A2%E6%A0%91%E7%9A%84%E7%AC%ACk%E4%B8%AA%E7%BB%93%E7%82%B9.py)：中序遍历输出一个序列，然后找到序列中第k个数即可。
+[面试题54：二叉搜索树的第k个结点](https://github.com/Einstellung/AlgorithmByPython/blob/master/Target%20Offer/%E4%BA%8C%E5%8F%89%E6%90%9C%E7%B4%A2%E6%A0%91%E7%9A%84%E7%AC%ACk%E4%B8%AA%E7%BB%93%E7%82%B9.py)：中序遍历输出一个序列，然后找到序列中第k个数即可。关于前序遍历、中序遍历和后序遍历的[代码](https://blog.csdn.net/qq_39269985/article/details/80441558)和[图解](https://blog.csdn.net/Monster_ii/article/details/82115772)
 
 [面试题55：二叉树的深度](https://github.com/Jack-Lee-Hiter/AlgorithmsByPython/blob/master/Target%20Offer/%E4%BA%8C%E5%8F%89%E6%A0%91%E7%9A%84%E6%B7%B1%E5%BA%A6.py)：利用递归实现。如果一棵树只有一个结点，那么它的深度为1。递归的时候无需判断左右子树是否存在，因为如果该节点为叶节点，它的左右子树不存在，那么在下一级递归的时候，直接return 0。同时，记得每次递归返回值的时候，深度加一操作。
 
