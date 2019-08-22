@@ -213,7 +213,7 @@
 [面试题54：二叉搜索树的第k个结点](https://github.com/Einstellung/AlgorithmByPython/blob/master/Target%20Offer/%E4%BA%8C%E5%8F%89%E6%90%9C%E7%B4%A2%E6%A0%91%E7%9A%84%E7%AC%ACk%E4%B8%AA%E7%BB%93%E7%82%B9.py)：中序遍历输出一个序列，然后找到序列中第k个数即可。关于前序遍历、中序遍历和后序遍历的[代码](https://blog.csdn.net/qq_39269985/article/details/80441558)和[图解](https://blog.csdn.net/Monster_ii/article/details/82115772)
 
 面试题55：二叉树的深度  
-[题目一：二叉树的深度](https://github.com/Jack-Lee-Hiter/AlgorithmsByPython/blob/master/Target%20Offer/%E4%BA%8C%E5%8F%89%E6%A0%91%E7%9A%84%E6%B7%B1%E5%BA%A6.py)：利用递归实现。如果一棵树只有一个结点，那么它的深度为1。递归的时候无需判断左右子树是否存在，因为如果该节点为叶节点，它的左右子树不存在，那么在下一级递归的时候，直接return 0。同时，记得每次递归返回值的时候，深度加一操作。  
+[题目一：二叉树的深度](https://github.com/Einstellung/AlgorithmByPython/blob/master/Target%20Offer/%E4%BA%8C%E5%8F%89%E6%A0%91%E7%9A%84%E6%B7%B1%E5%BA%A6.py)：利用递归实现。如果一棵树只有一个结点，那么它的深度为1。递归的时候无需判断左右子树是否存在，因为如果该节点为叶节点，它的左右子树不存在，那么在下一级递归的时候，直接return 0。同时，记得每次递归返回值的时候，深度加一操作。  
 [题目二：判断平衡二叉树](https://github.com/Jack-Lee-Hiter/AlgorithmsByPython/blob/master/Target%20Offer/%E5%88%A4%E6%96%AD%E5%B9%B3%E8%A1%A1%E4%BA%8C%E5%8F%89%E6%A0%91.py)：基于二叉树的深度，再次进行递归。以此判断左子树的高度和右子树的高度差是否大于1，若是则不平衡，反之平衡。
 
 面试题56：数组中数字出现的次数  
