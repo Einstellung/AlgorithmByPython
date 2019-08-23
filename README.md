@@ -220,7 +220,8 @@
 [题目一：数组中只出现一次的两个数字](https://github.com/Einstellung/AlgorithmByPython/blob/master/Target%20Offer/%E6%95%B0%E7%BB%84%E4%B8%AD%E5%8F%AA%E5%87%BA%E7%8E%B0%E4%B8%80%E6%AC%A1%E7%9A%84%E6%95%B0%E5%AD%97.py)：**任何一个数字异或他自己都等于0**，**0异或任何一个数都等于那个数**。数组中出了两个数字之外，其他数字都出现两次，那么我们从头到尾依次异或数组中的每个数，那么出现两次的数字都在整个过程中被抵消掉，那两个不同的数字异或的值不为0，也就是说这两个数的异或值中至少某一位为1。我们找到结果数字中最右边为1的那一位i，然后一次遍历数组中的数字，如果数字的第i位为1，则数字分到第一组，数字的第i位不为1，则数字分到第二组。这样任何两个相同的数字就分到了一组，而两个不同的数字在第i位必然一个为1一个不为1而分到不同的组，然后再对两个组依次进行异或操作，最后每一组得到的结果对应的就是两个只出现一次的数字。  
 [题目二：数组中唯一只出现一次的数字](https://github.com/Einstellung/AlgorithmByPython/blob/master/Target%20Offer/%E6%95%B0%E7%BB%84%E4%B8%AD%E5%94%AF%E4%B8%80%E5%8F%AA%E5%87%BA%E7%8E%B0%E4%B8%80%E6%AC%A1%E7%9A%84%E6%95%B0%E5%AD%97.py)
 
-[面试题57：和为s的两个数字](https://github.com/Jack-Lee-Hiter/AlgorithmsByPython/blob/master/Target%20Offer/%E5%92%8C%E4%B8%BAs%E7%9A%84%E4%B8%A4%E4%B8%AA%E6%95%B0%E5%AD%97.py)：设定两个指针，一个指向数组的起点，一个指向数组的终点，然后对两个数字求和，如果和大于目标值，则把后一个指针前移，如果和小于目标值，则把前一个指针后移。两个指针交汇的时候如果还没找到，就终止操作。
+面试题57：和为s的数字  
+[题目一：和为s的两个数字](https://github.com/Jack-Lee-Hiter/AlgorithmsByPython/blob/master/Target%20Offer/%E5%92%8C%E4%B8%BAs%E7%9A%84%E4%B8%A4%E4%B8%AA%E6%95%B0%E5%AD%97.py)：设定两个指针，一个指向数组的起点，一个指向数组的终点，然后对两个数字求和，如果和大于目标值，则把后一个指针前移，如果和小于目标值，则把前一个指针后移。两个指针交汇的时候如果还没找到，就终止操作。
 
 [面试题41：和为s的连续正数序列](https://github.com/Jack-Lee-Hiter/AlgorithmsByPython/blob/master/Target%20Offer/%E5%92%8C%E4%B8%BAs%E7%9A%84%E8%BF%9E%E7%BB%AD%E6%95%B4%E6%95%B0%E5%BA%8F%E5%88%97.py)：设定两个指针，先分别指向数字1和数字2，并设这两个指针为small和big，对small和big求和，如果和大于目标值，则从当前和中删除small值，并把small值加一，如果和小于目标值，则把big值加一，再把新的big值加入和中。如果和等于目标值，就输出small到big的序列，同时把big加一并加入和中，继续之前的操作。
 
