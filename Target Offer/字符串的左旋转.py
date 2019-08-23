@@ -29,6 +29,11 @@ class Solution:
             endIndex -= 1
         return alist
 
+    
+    # 或者还有一种办法，使用Python语言本身的特点，实现起来十分容易
+    def LeftRotateString(self, s, n):
+        return s[n:] + s[:n]
+
 test = 'abcdefg'
 s = Solution()
 print(s.LeftRotateString(test, 2))
