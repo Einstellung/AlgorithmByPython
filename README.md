@@ -226,7 +226,10 @@
 
 面试题58：翻转字符串  
 [题目一：翻转单词顺序](https://github.com/Jack-Lee-Hiter/AlgorithmsByPython/blob/master/Target%20Offer/%E7%BF%BB%E8%BD%AC%E5%8D%95%E8%AF%8D%E9%A1%BA%E5%BA%8F.py)：首先需要写一个reverse函数，把任何输入的字符串完全翻转。然后从前往后依次遍历新字符串，如果遇到空格，就把空格前的字符串用reverse翻转，添加空格，继续遍历。需要注意的是，如果新字符串结尾不是空格，当遍历到结尾的时候，前一个空格到结尾的字符串没有翻转，因此记得跳出遍历后，需要再完成一次翻转操作。  
-[题目二：左旋转字符串](https://github.com/Jack-Lee-Hiter/AlgorithmsByPython/blob/master/Target%20Offer/%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%9A%84%E5%B7%A6%E6%97%8B%E8%BD%AC.py)：首先需要写一个reverse函数，把任何输入的字符串完全翻转。然后根据题目中给出的左旋转字符串的个数n，用全字符串长度length减去旋转字符串个数n，求得对于新的字符串应该在哪一位进行旋转，然后分别旋转前[:length-n]子串和[length-n:]子串，重新拼接两个子串即可。
+[题目二：左旋转字符串](https://github.com/Einstellung/AlgorithmByPython/blob/master/Target%20Offer/%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%9A%84%E5%B7%A6%E6%97%8B%E8%BD%AC.py)：首先需要写一个reverse函数，把任何输入的字符串完全翻转。然后根据题目中给出的左旋转字符串的个数n，用全字符串长度length减去旋转字符串个数n，求得对于新的字符串应该在哪一位进行旋转，然后分别旋转前[:length-n]子串和[length-n:]子串，重新拼接两个子串即可。
+
+面试题59：队列的最大值  
+[题目一：滑动窗口的最大值](https://github.com/Jack-Lee-Hiter/AlgorithmsByPython/blob/master/Target%20Offer/%E6%BB%91%E5%8A%A8%E7%AA%97%E5%8F%A3%E7%9A%84%E6%9C%80%E5%A4%A7%E5%80%BC.py)：我们把可能成为滑动窗口的最大值的数值下标存入一个两端开口的队列index中。首先遍历输入数组，在遍历次数小于窗口长度的时候，如果index数组里面含有元素而且元素后面的下标值对应的输入数组的数如果小于当前遍历到的输入数组元素值，那么就把尾部的元素下标值不断pop出来，再压入当前输入元素对应的下标值。然后再从等于滑动窗口大小的位置继续遍历输入数组。首先把index数组的头元素下标值对应输入数组值压入输出数组。同样的，如果index数组里面含有元素而且元素后面的下标值对应的输入数组的数如果小于当前遍历到的输入数组元素值，那么就把尾部的元素下标值不断pop出来，同时，如果index数组内有元素，而且当一个数字的下标与当前处理的数字的下标只差大于或等于滑动窗口的大小时，这个数字已经从窗口中画出，可以从队列中删除了，再压入当前输入元素对应的下标值。**最后还需要在输出数组中append一下index手元素下标对应的输入元素值**。
 
 [面试题43：n个骰子的点数](https://github.com/Jack-Lee-Hiter/AlgorithmsByPython/blob/master/Target%20Offer/n%E4%B8%AA%E9%AA%B0%E5%AD%90%E7%9A%84%E7%82%B9%E6%95%B0.py)：用两个数组来存储骰子点数的每一个总数出现次数。在一次循环中，第一个数组中的第n个数字表示骰子和为n出现的次数。在下一次循环中加入一个新的骰子，此时和为n的骰子出现的次数应该等于上一次循环中骰子点数和为n-1，n-2，n-3，n-4，n-5，n-6的次数的总和，也就是把另一个数组的第n个数字对应上一个数组的n-1，n-2，n-3，n-4，n-5，n-6的次数的总和。同时需要注意的是，**每次使用新数组的时候，需要把数组所有位置清零**，因为我们对于第n位进行的累加操作，如果之前第n位有数字但不清零的话，会导致结果偏大。
 
@@ -238,7 +241,6 @@
 
 [面试题47：不用加减乘除做加法](https://github.com/Jack-Lee-Hiter/AlgorithmsByPython/blob/master/Target%20Offer/%E4%B8%8D%E7%94%A8%E5%8A%A0%E5%87%8F%E4%B9%98%E9%99%A4%E5%81%9A%E5%8A%A0%E6%B3%95.py)：将两个数的加法看作两步，第一步是两个数相加但是不进位，第二步是记录之前的两数相加应该进位的地方加上前一个相加但是不进位的数。对于具体的两个不小于0的数m和n，第一步可以看做m和n的异或运算m^n，第二步可以看做m和n的与运算然后左移一位得到实际的进位位置(m&n)<<1。然后把两个得到的数字加起来继续操作，指到carry进位为0终止操作。对于含有负数的情况，见[博文](http://blog.csdn.net/u012505432/article/details/51902155)。
 
-[面试题48：不能被继承的类(暂无)](https://github.com/Jack-Lee-Hiter)
 
 [面试题49：把字符串转换成整数](https://github.com/Jack-Lee-Hiter/AlgorithmsByPython/blob/master/Target%20Offer/%E6%8A%8A%E5%AD%97%E7%AC%A6%E4%B8%B2%E8%BD%AC%E6%8D%A2%E6%88%90%E6%95%B4%E6%95%B0.py)：主要是区分输入和合法性，比如输入一个None，输入一个空字符串 ""，或者输入的字符串中含有“+”或者“-”，或者输入的字符串中含有除去+ — 数字的非数字字符，如何段应正常的输出还是报错，需要考虑的全面一些。
 
@@ -252,10 +254,6 @@
 [面试题60：把二叉树打印成多行](https://github.com/Jack-Lee-Hiter/AlgorithmsByPython/blob/master/Target%20Offer/%E6%8A%8A%E4%BA%8C%E5%8F%89%E6%A0%91%E6%89%93%E5%8D%B0%E6%88%90%E5%A4%9A%E8%A1%8C.py)：引入两个队列。首先把当前层的节点存入到一个队列queue1中，然后遍历当前队列queue1，在遍历的过程中，如果节点有左子树或右子树，依次存入另一个队列queue2。然后遍历队列queue2，如此往复。
 
 [面试题61：按之字形顺序打印二叉树](https://github.com/Jack-Lee-Hiter/AlgorithmsByPython/blob/master/Target%20Offer/%E6%8C%89%E4%B9%8B%E5%AD%97%E5%BD%A2%E9%A1%BA%E5%BA%8F%E6%89%93%E5%8D%B0%E4%BA%8C%E5%8F%89%E6%A0%91.py)：按之字形顺序打印二叉树需要两个栈。我们在打印某一行节点时，拔下一层的子节点保存到相应的栈里。如果当前打印的奇数层，则先保存左子节点再保存右子节点到第一个栈里；如果当前打印的是偶数层，则先保存右子节点再保存左子节点到第二个栈里。
-
-
-[面试题65：滑动窗口的最大值](https://github.com/Jack-Lee-Hiter/AlgorithmsByPython/blob/master/Target%20Offer/%E6%BB%91%E5%8A%A8%E7%AA%97%E5%8F%A3%E7%9A%84%E6%9C%80%E5%A4%A7%E5%80%BC.py)：我们把可能成为滑动窗口的最大值的数值下标存入一个两端开口的队列index中。首先遍历输入数组，在遍历次数小于窗口长度的时候，如果index数组里面含有元素而且元素后面的下标值对应的输入数组的数如果小于当前遍历到的输入数组元素值，那么就把尾部的元素下标值不断pop出来，再压入当前输入元素对应的下标值。然后再从等于滑动窗口大小的位置继续遍历输入数组。首先把index数组的头元素下标值对应输入数组值压入输出数组。同样的，如果index数组里面含有元素而且元素后面的下标值对应的输入数组的数如果小于当前遍历到的输入数组元素值，那么就把尾部的元素下标值不断pop出来，同时，如果index数组内有元素，而且当一个数字的下标与当前处理的数字的下标只差大于或等于滑动窗口的大小时，这个数字已经从窗口中画出，可以从队列中删除了，再压入当前输入元素对应的下标值。**最后还需要在输出数组中append一下index手元素下标对应的输入元素值**。
-
 
 
 [面试题补充：三元组实现稀疏矩阵相乘](https://github.com/Jack-Lee-Hiter/AlgorithmsByPython/blob/master/Target%20Offer/multiSparse.py)
