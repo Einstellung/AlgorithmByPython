@@ -8,27 +8,33 @@
 
 # -*- coding:utf-8 -*-
 class Solution:
-    def maxInWindows(self, num, size):
-        if not num or size <= 0:
+    def maxInWindows(self, array, num):
+        if not array or num <= 0:
             return []
-        deque = []
-        if len(num) >= size:
-            index = []
-            for i in range(size):
-                while len(index) > 0 and num[i] > num[index[-1]]:
-                    index.pop()
-                index.append(i)
-
-            for i in range(size, len(num)):
-                deque.append(num[index[0]])
-                while len(index) > 0 and num[i] >= num[index[-1]]:
-                    index.pop()
-                if len(index) > 0 and index[0] <= i - size:
-                    index.pop(0)
-                index.append(i)
-
-            deque.append(num[index[0]])
-        return deque
+        
+        queue = [] # queue用来存储array每个元素的位置
+        result = [] # 用来保存最后弹出的元素
+        
+        for i in range(len(array)):
+            # 如果滑动窗口已经滑出queue的头部元素的位置，
+            # 则弹出头部元素
+            if len(queue) > 0 and i+1-num > queue[0]:
+                queue.pop(0)
+            
+            # 如果新加入的数字比已有的数字大，已有的数字剔除
+            while len(queue) > 0 and array[queue[-1]] < array[i]:
+                queue.pop()
+            # 新加入的数字如果比已有的数字小，不管，其实就是
+            # 新加入数字小的话，就加进去
+            queue.append(i)
+            
+            # 滑动窗口的最大值总是位于头部的
+            if i >= num-1:
+                result.append(array[queue[0]])
+                
+            i += 1
+            
+        return result
 
 test = [2, 3, 4, 2, 6, 2, 5, 1]
 s = Solution()
