@@ -53,8 +53,6 @@
 
 [正则表达式和一个使用正则表达式的图片爬虫](https://github.com/Jack-Lee-Hiter/AlgorithmsByPython/tree/master/regularExpression)
 
-[剑指offer](https://github.com/Jack-Lee-Hiter/AlgorithmsByPython/tree/master/Target%20Offer)
-
 [面试题2：实现Singleton模式](https://github.com/Jack-Lee-Hiter/AlgorithmsByPython/blob/master/Target%20Offer/Singleton.py)
 
 ### 数组
@@ -278,6 +276,4 @@
 
 [LeetCode](https://github.com/Jack-Lee-Hiter/AlgorithmsByPython/tree/master/leetcode)
 
-[logistic回归](https://github.com/Jack-Lee-Hiter/AlgorithmsByPython/tree/master/Logistic%20regression)
-
-[SVM](https://github.com/Jack-Lee-Hiter/AlgorithmsByPython/tree/master/SVM)
+### LeetCodeCode部分算题
