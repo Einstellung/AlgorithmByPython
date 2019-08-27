@@ -2,6 +2,8 @@ def quickSort(alist):
     quickSortHelper(alist, 0, len(alist) - 1)
     
 def quickSortHelper(alist, first, last):
+    # 需要进行first是否小于last判断，否则会发生splitPoint-1
+    # 一直减下去，就超出数组范围了
     if first < last:
         splitPoint = partition(alist, first, last)
         
