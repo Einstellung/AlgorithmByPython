@@ -53,8 +53,6 @@
 
 [正则表达式和一个使用正则表达式的图片爬虫](https://github.com/Jack-Lee-Hiter/AlgorithmsByPython/tree/master/regularExpression)
 
-[剑指offer](https://github.com/Jack-Lee-Hiter/AlgorithmsByPython/tree/master/Target%20Offer)
-
 [面试题2：实现Singleton模式](https://github.com/Jack-Lee-Hiter/AlgorithmsByPython/blob/master/Target%20Offer/Singleton.py)
 
 ### 数组
@@ -228,7 +226,7 @@
 
 [面试题62：圆圈中最后剩下的数字](https://github.com/Jack-Lee-Hiter/AlgorithmsByPython/blob/master/Target%20Offer/%E7%BA%A6%E7%91%9F%E5%A4%AB%E7%8E%AF.py)：递推公式：f[i] = (f[i-1]+m)%i。[详解](http://blog.csdn.net/u012505432/article/details/51747181)
 
-[面试题63：股票的最大利润]
+[面试题63：股票的最大利润](https://github.com/Einstellung/AlgorithmByPython/blob/master/Target%20Offer/%E8%82%A1%E7%A5%A8%E7%9A%84%E6%9C%80%E5%A4%A7%E5%88%A9%E6%B6%A6.py)
 
 ### 发散思维能力
 
@@ -278,6 +276,4 @@
 
 [LeetCode](https://github.com/Jack-Lee-Hiter/AlgorithmsByPython/tree/master/leetcode)
 
-[logistic回归](https://github.com/Jack-Lee-Hiter/AlgorithmsByPython/tree/master/Logistic%20regression)
-
-[SVM](https://github.com/Jack-Lee-Hiter/AlgorithmsByPython/tree/master/SVM)
+### LeetCodeCode部分算题
