@@ -49,7 +49,7 @@
 
 [分治算法](https://github.com/Jack-Lee-Hiter/AlgorithmsByPython/blob/master/divideAndConquer.py)
 
-[堆排序](https://github.com/Jack-Lee-Hiter/AlgorithmsByPython/blob/master/heapSort.py)
+[堆排序](https://blog.csdn.net/Einstellung/article/details/100097205)
 
 [正则表达式和一个使用正则表达式的图片爬虫](https://github.com/Jack-Lee-Hiter/AlgorithmsByPython/tree/master/regularExpression)
 
