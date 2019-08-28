@@ -274,6 +274,4 @@
 
 [面试题补充：二叉树的宽度](https://github.com/Jack-Lee-Hiter/AlgorithmsByPython/blob/master/Target%20Offer/%E6%A0%91%E7%9A%84%E5%AE%BD%E5%BA%A6.py)
 
-[LeetCode](https://github.com/Jack-Lee-Hiter/AlgorithmsByPython/tree/master/leetcode)
-
 ### LeetCodeCode部分算题
