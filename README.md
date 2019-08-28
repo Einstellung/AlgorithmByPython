@@ -275,3 +275,7 @@
 [面试题补充：二叉树的宽度](https://github.com/Jack-Lee-Hiter/AlgorithmsByPython/blob/master/Target%20Offer/%E6%A0%91%E7%9A%84%E5%AE%BD%E5%BA%A6.py)
 
 ### LeetCodeCode部分算题
+
+[347最大k个数出现的频率](https://github.com/Einstellung/AlgorithmByPython/blob/master/leetcode/347%E6%9C%80%E5%A4%A7k%E4%B8%AA%E6%95%B0%E5%87%BA%E7%8E%B0%E7%9A%84%E9%A2%91%E7%8E%87.py)
+
+[75荷兰国旗问题](https://xiaozhuanlan.com/topic/1805473692)
