@@ -57,6 +57,10 @@
 
 ### 数组
 
+面试题3：数组中重复的数字  
+[题目一：找出数组中重复的数字]() 这个是讲解[链接](https://blog.csdn.net/Einstellung/article/details/89554957)  
+[题目二：不修改数组找出重复的数字]()
+
 [面试题4：二维数组中的查找](https://github.com/Jack-Lee-Hiter/AlgorithmsByPython/blob/master/Target%20Offer/%E4%BA%8C%E7%BB%B4%E6%95%B0%E7%BB%84%E6%9F%A5%E6%89%BE.py)：对于在一个每一行从左到右依次递增，每一列从上到下依次递增的二维数组查找一个元素，可以选择从数组左上角开始查找array[i]\[j]，如果目标元素大于array[i]\[j]，i+=1，如果元素小于array[i]\[j]，j-=1，依次循环直至找到这个数。
 
 ### 字符串
@@ -240,9 +244,6 @@
 
 [面试题50：树中两个节点的最低公共祖先](https://github.com/Jack-Lee-Hiter/AlgorithmsByPython/blob/master/Target%20Offer/%E4%BA%8C%E5%8F%89%E6%A0%91%E7%9A%84%E6%9C%80%E4%BD%8E%E5%85%AC%E5%85%B1%E7%A5%96%E5%85%88.py)：首先来看比较简单的情况--[二叉搜索树的最低公共祖先](https://github.com/Jack-Lee-Hiter/AlgorithmsByPython/blob/master/Target%20Offer/%E4%BA%8C%E5%8F%89%E6%90%9C%E7%B4%A2%E6%A0%91%E7%9A%84%E6%9C%80%E4%BD%8E%E5%85%AC%E5%85%B1%E7%A5%96%E5%85%88.py)，对于二叉搜索树而言，每个节点的左子节点都小于这个数，右子节点都大于这个数，因此，我们比较当前节点和需要比较的结点m，n的大小，如果当前节点的值均大于m，n，则在当前节点的左子树继续操作，如果当前节点均小于m，n，则在当前节点的右子树继续操作，反之，则当前结点是最小公共祖先。而对于普通的二叉树而言，我们如果希望找到两个结点的最低公共祖先，那么我们可以先从树的根节点开始，找到根节点到结点m和结点n的路径，这时候我们就有两个List或者两个链表，然后就像前面题中遇到的寻找两个链表的公共结点一样，从后往前遍历两个List找到最靠后的第一个公共结点即可。
 
-[面试题51：数组中重复的数字](https://github.com/Jack-Lee-Hiter/AlgorithmsByPython/blob/master/Target%20Offer/%E6%95%B0%E7%BB%84%E4%B8%AD%E9%87%8D%E5%A4%8D%E7%9A%84%E6%95%B0%E5%AD%97.py)：对于一个长度为n的数组里所有的数字都在0到n-1的范围内。查找重复数字的话，首先容易想到，对数组进行排序，然后遍历数组查找重复的数字，这样的时间复杂度为O(nlogn)；或者建立一个哈希表，这样实在O(n)的时间查找到，但是空间复杂度O(n)。另外一个空间复杂度为O(1)的算法如下，因为数字在0~n-1的范围内，那么如果数字没有重复，那么当数组排序之后数字i将出现在下标为i的位置，但是有重复的话，在某个位置j出现的数字将不是j。我们重排这个数组。从头到尾依次扫描这个数组中的每个数字，如果下标i不是出现数字i，那么就把数字i和i处的数字进行交换使数字i出现在应该出现的位置，如果新交换的数字还不是他应该出现的位置，继续交换，直至该处的数字m等于x下标m，如果在交换的过程中，第i处的位置数字等于第m处的数字，那么我们就找到了第一个重复的数字，记录这个数字，在从下一个位置继续扫描。
-
-
 [面试题60：把二叉树打印成多行](https://github.com/Jack-Lee-Hiter/AlgorithmsByPython/blob/master/Target%20Offer/%E6%8A%8A%E4%BA%8C%E5%8F%89%E6%A0%91%E6%89%93%E5%8D%B0%E6%88%90%E5%A4%9A%E8%A1%8C.py)：引入两个队列。首先把当前层的节点存入到一个队列queue1中，然后遍历当前队列queue1，在遍历的过程中，如果节点有左子树或右子树，依次存入另一个队列queue2。然后遍历队列queue2，如此往复。
 
 [面试题61：按之字形顺序打印二叉树](https://github.com/Jack-Lee-Hiter/AlgorithmsByPython/blob/master/Target%20Offer/%E6%8C%89%E4%B9%8B%E5%AD%97%E5%BD%A2%E9%A1%BA%E5%BA%8F%E6%89%93%E5%8D%B0%E4%BA%8C%E5%8F%89%E6%A0%91.py)：按之字形顺序打印二叉树需要两个栈。我们在打印某一行节点时，拔下一层的子节点保存到相应的栈里。如果当前打印的奇数层，则先保存左子节点再保存右子节点到第一个栈里；如果当前打印的是偶数层，则先保存右子节点再保存左子节点到第二个栈里。
@@ -279,3 +280,5 @@
 [347最大k个数出现的频率](https://github.com/Einstellung/AlgorithmByPython/blob/master/leetcode/347%E6%9C%80%E5%A4%A7k%E4%B8%AA%E6%95%B0%E5%87%BA%E7%8E%B0%E7%9A%84%E9%A2%91%E7%8E%87.py)
 
 [75荷兰国旗问题](https://xiaozhuanlan.com/topic/1805473692)
+
+[455分发饼干(贪心问题)](https://github.com/Einstellung/AlgorithmByPython/blob/master/leetcode/455%E5%88%86%E5%8F%91%E9%A5%BC%E5%B9%B2.py)
