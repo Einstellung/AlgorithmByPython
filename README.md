@@ -58,7 +58,7 @@
 ### 数组
 
 面试题3：数组中重复的数字  
-[题目一：找出数组中重复的数字]()这个是讲解[链接](https://blog.csdn.net/Einstellung/article/details/89554957)  
+[题目一：找出数组中重复的数字]() 这个是讲解[链接](https://blog.csdn.net/Einstellung/article/details/89554957)  
 [题目二：不修改数组找出重复的数字]()
 
 [面试题4：二维数组中的查找](https://github.com/Jack-Lee-Hiter/AlgorithmsByPython/blob/master/Target%20Offer/%E4%BA%8C%E7%BB%B4%E6%95%B0%E7%BB%84%E6%9F%A5%E6%89%BE.py)：对于在一个每一行从左到右依次递增，每一列从上到下依次递增的二维数组查找一个元素，可以选择从数组左上角开始查找array[i]\[j]，如果目标元素大于array[i]\[j]，i+=1，如果元素小于array[i]\[j]，j-=1，依次循环直至找到这个数。
