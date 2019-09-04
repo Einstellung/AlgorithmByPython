@@ -65,7 +65,7 @@
 
 ### 字符串
 
-[面试题5：替换空格](https://github.com/Einstellung/AlgorithmsByPython/blob/master/Target%20Offer/%E6%9B%BF%E6%8D%A2%E7%A9%BA%E6%A0%BC.py)：如果直接每次遇到空格添加'%20'，那么空格后面的数字就需要频繁向后移动。遇到这种移动问题，我们可以尝试先给出最终需要的长度，然后从后向前扫描，同时给定两个指针来保证定位。**逆向思维**
+[面试题5：替换空格](https://github.com/Einstellung/AlgorithmByPython/blob/master/Target%20Offer/%E6%9B%BF%E6%8D%A2%E7%A9%BA%E6%A0%BC.py)：如果直接每次遇到空格添加'%20'，那么空格后面的数字就需要频繁向后移动。遇到这种移动问题，我们可以尝试先给出最终需要的长度，然后从后向前扫描，同时给定两个指针来保证定位。**逆向思维**
 
 ### 链表
 
