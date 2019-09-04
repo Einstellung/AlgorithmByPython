@@ -69,7 +69,7 @@
 
 ### 链表
 
-[面试题6：从头到尾打印链表](https://github.com/Einstellung/AlgorithmsByPython/blob/master/Target%20Offer/%E5%8F%8D%E5%90%91%E6%89%93%E5%8D%B0%E9%93%BE%E8%A1%A8.py)：从头到尾遍历链表，并用一个栈存储每个结点的值，之后出栈输出值即可。
+[面试题6：从头到尾打印链表](https://github.com/Einstellung/AlgorithmByPython/blob/master/Target%20Offer/%E4%BB%8E%E5%B0%BE%E5%88%B0%E5%A4%B4%E6%89%93%E5%8D%B0%E9%93%BE%E8%A1%A8.py)：从头到尾遍历链表，并用一个栈存储每个结点的值，之后出栈输出值即可。
 
 ### 树
 
