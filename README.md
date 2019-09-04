@@ -58,14 +58,14 @@
 ### 数组
 
 面试题3：数组中重复的数字  
-[题目一：找出数组中重复的数字]() 这个是讲解[链接](https://blog.csdn.net/Einstellung/article/details/89554957)  
+[题目一：找出数组中重复的数字](https://github.com/Einstellung/AlgorithmByPython/blob/master/Target%20Offer/%E6%89%BE%E5%87%BA%E6%95%B0%E7%BB%84%E4%B8%AD%E9%87%8D%E5%A4%8D%E7%9A%84%E6%95%B0%E5%AD%97.py) 这个是讲解[链接](https://blog.csdn.net/Einstellung/article/details/89554957)  
 [题目二：不修改数组找出重复的数字]()
 
 [面试题4：二维数组中的查找](https://github.com/Jack-Lee-Hiter/AlgorithmsByPython/blob/master/Target%20Offer/%E4%BA%8C%E7%BB%B4%E6%95%B0%E7%BB%84%E6%9F%A5%E6%89%BE.py)：对于在一个每一行从左到右依次递增，每一列从上到下依次递增的二维数组查找一个元素，可以选择从数组左上角开始查找array[i]\[j]，如果目标元素大于array[i]\[j]，i+=1，如果元素小于array[i]\[j]，j-=1，依次循环直至找到这个数。
 
 ### 字符串
 
-[面试题5：替换空格](https://github.com/Einstellung/AlgorithmsByPython/blob/master/Target%20Offer/%E6%9B%BF%E6%8D%A2%E7%A9%BA%E6%A0%BC.py)：如果直接每次遇到空格添加'%20'，那么空格后面的数字就需要频繁向后移动。遇到这种移动问题，我们可以尝试先给出最终需要的长度，然后从后向前扫描，同时给定两个指针来保证定位。**逆向思维**
+[面试题5：替换空格](https://github.com/Einstellung/AlgorithmByPython/blob/master/Target%20Offer/%E6%9B%BF%E6%8D%A2%E7%A9%BA%E6%A0%BC.py)：如果直接每次遇到空格添加'%20'，那么空格后面的数字就需要频繁向后移动。遇到这种移动问题，我们可以尝试先给出最终需要的长度，然后从后向前扫描，同时给定两个指针来保证定位。**逆向思维**
 
 ### 链表
 
