@@ -83,7 +83,7 @@
 
 ### 递归和循环
 
-[面试题10：斐波那契数列](https://github.com/Einstellung/AlgorithmsByPython/blob/master/Target%20Offer/%E6%96%90%E6%B3%A2%E9%82%A3%E5%A5%91%E6%95%B0%E5%88%97.py)：如何不使用递归实现斐波那契数列，需要把前面两个数字存入在一个数组中。斐波那契数列的变形有很多，如[青蛙跳台阶](https://github.com/Einstellung/AlgorithmsByPython/blob/master/Target%20Offer/%E9%9D%92%E8%9B%99%E8%B7%B3%E5%8F%B0%E9%98%B6.py)，一次跳一个或者两个；铺瓷砖问题。[**变态青蛙跳**](https://github.com/Einstellung/AlgorithmsByPython/blob/master/Target%20Offer/%E5%8F%98%E6%80%81%E9%9D%92%E8%9B%99%E8%B7%B3%E5%8F%B0%E9%98%B6.py)，每次至少跳一个，至多跳n个，一共有f(n)=2<sup>n-1</sup>种跳法。考察数学建模的能力。以及[矩形覆盖问题](https://blog.csdn.net/Einstellung/article/details/90020345)
+[面试题10：斐波那契数列](https://github.com/Einstellung/AlgorithmByPython/blob/master/Target Offer/斐波那契数列.py)：如何不使用递归实现斐波那契数列，需要把前面两个数字存入在一个数组中。斐波那契数列的变形有很多，如[青蛙跳台阶](https://github.com/Einstellung/AlgorithmsByPython/blob/master/Target%20Offer/%E9%9D%92%E8%9B%99%E8%B7%B3%E5%8F%B0%E9%98%B6.py)，一次跳一个或者两个；铺瓷砖问题。[**变态青蛙跳**](https://github.com/Einstellung/AlgorithmsByPython/blob/master/Target%20Offer/%E5%8F%98%E6%80%81%E9%9D%92%E8%9B%99%E8%B7%B3%E5%8F%B0%E9%98%B6.py)，每次至少跳一个，至多跳n个，一共有f(n)=2<sup>n-1</sup>种跳法。考察数学建模的能力。以及[矩形覆盖问题](https://blog.csdn.net/Einstellung/article/details/90020345)
 
 ### 查找和排序
 
