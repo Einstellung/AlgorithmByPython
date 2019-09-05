@@ -69,13 +69,13 @@
 
 ### 链表
 
-[面试题6：从头到尾打印链表](https://github.com/Einstellung/AlgorithmsByPython/blob/master/Target%20Offer/%E5%8F%8D%E5%90%91%E6%89%93%E5%8D%B0%E9%93%BE%E8%A1%A8.py)：从头到尾遍历链表，并用一个栈存储每个结点的值，之后出栈输出值即可。
+[面试题6：从头到尾打印链表](https://github.com/Einstellung/AlgorithmByPython/blob/master/Target%20Offer/%E4%BB%8E%E5%B0%BE%E5%88%B0%E5%A4%B4%E6%89%93%E5%8D%B0%E9%93%BE%E8%A1%A8.py)：从头到尾遍历链表，并用一个栈存储每个结点的值，之后出栈输出值即可。
 
 ### 树
 
 [面试题7：重建二叉树](https://github.com/Jack-Lee-Hiter/AlgorithmsByPython/blob/master/Target%20Offer/%E9%87%8D%E5%BB%BA%E4%BA%8C%E5%8F%89%E6%A0%91.py)：利用二叉树前序遍历和中序遍历的特性。前序遍历的第一个值一定为根节点，对应于中序遍历中间的一个点。在中序遍历序列中，这个点左侧的均为根的左子树，这个点右侧的均为根的右子树。这时可以利用递归，分别取前序遍历[1:i+1]和中序遍历的[:i]对应与左子树继续上一个过程，取前序遍历[i+1:]和中序遍历[i+1]对应于右子树继续上一个过程，最终得以重建二叉树。
 
-[面试题8：二叉树的下一个结点](https://github.com/Einstellung/AlgorithmsByPython/blob/master/Target%20Offer/%E4%BA%8C%E5%8F%89%E6%A0%91%E7%9A%84%E4%B8%8B%E4%B8%80%E4%B8%AA%E7%BB%93%E7%82%B9.py)：三种情况：当前节点有右子树的话，当前节点的下一个结点是右子树中的最左子节点；当前节点无右子树但是是父节点的左子节点，下一个节点是当前结点的父节点；当前节点无右子树而且是父节点的右子节点，则一直向上遍历，直到找到最靠近的一个祖先节点pNode，pNode是其父节点的左子节点，那么输入节点的下一个结点就是pNode的父节点。
+[面试题8：二叉树的下一个结点](https://github.com/Einstellung/AlgorithmByPython/blob/master/Target%20Offer/%E4%BA%8C%E5%8F%89%E6%A0%91%E7%9A%84%E4%B8%8B%E4%B8%80%E4%B8%AA%E7%BB%93%E7%82%B9.py)：三种情况：当前节点有右子树的话，当前节点的下一个结点是右子树中的最左子节点；当前节点无右子树但是是父节点的左子节点，下一个节点是当前结点的父节点；当前节点无右子树而且是父节点的右子节点，则一直向上遍历，直到找到最靠近的一个祖先节点pNode，pNode是其父节点的左子节点，那么输入节点的下一个结点就是pNode的父节点。
 
 ### 栈和队列
 
@@ -83,7 +83,7 @@
 
 ### 递归和循环
 
-[面试题10：斐波那契数列](https://github.com/Einstellung/AlgorithmsByPython/blob/master/Target%20Offer/%E6%96%90%E6%B3%A2%E9%82%A3%E5%A5%91%E6%95%B0%E5%88%97.py)：如何不使用递归实现斐波那契数列，需要把前面两个数字存入在一个数组中。斐波那契数列的变形有很多，如[青蛙跳台阶](https://github.com/Einstellung/AlgorithmsByPython/blob/master/Target%20Offer/%E9%9D%92%E8%9B%99%E8%B7%B3%E5%8F%B0%E9%98%B6.py)，一次跳一个或者两个；铺瓷砖问题。[**变态青蛙跳**](https://github.com/Einstellung/AlgorithmsByPython/blob/master/Target%20Offer/%E5%8F%98%E6%80%81%E9%9D%92%E8%9B%99%E8%B7%B3%E5%8F%B0%E9%98%B6.py)，每次至少跳一个，至多跳n个，一共有f(n)=2<sup>n-1</sup>种跳法。考察数学建模的能力。以及[矩形覆盖问题](https://blog.csdn.net/Einstellung/article/details/90020345)
+[面试题10：斐波那契数列](https://github.com/Einstellung/AlgorithmByPython/blob/master/Target%20Offer/%E6%96%90%E6%B3%A2%E9%82%A3%E5%A5%91%E6%95%B0%E5%88%97.py)：如何不使用递归实现斐波那契数列，需要把前面两个数字存入在一个数组中。斐波那契数列的变形有很多，如[青蛙跳台阶](https://github.com/Einstellung/AlgorithmsByPython/blob/master/Target%20Offer/%E9%9D%92%E8%9B%99%E8%B7%B3%E5%8F%B0%E9%98%B6.py)，一次跳一个或者两个；铺瓷砖问题。[**变态青蛙跳**](https://github.com/Einstellung/AlgorithmsByPython/blob/master/Target%20Offer/%E5%8F%98%E6%80%81%E9%9D%92%E8%9B%99%E8%B7%B3%E5%8F%B0%E9%98%B6.py)，每次至少跳一个，至多跳n个，一共有f(n)=2<sup>n-1</sup>种跳法。考察数学建模的能力。以及[矩形覆盖问题](https://blog.csdn.net/Einstellung/article/details/90020345)
 
 ### 查找和排序
 
