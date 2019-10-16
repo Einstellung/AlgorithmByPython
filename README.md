@@ -146,7 +146,7 @@
 
 [面试题31：栈的压入、弹出序列](https://github.com/Jack-Lee-Hiter/AlgorithmsByPython/blob/master/Target%20Offer/%E6%A0%88%E7%9A%84%E5%8E%8B%E5%85%A5%E5%BC%B9%E5%87%BA%E5%BA%8F%E5%88%97.py)：建立一个辅助栈，把push序列的数字依次压入辅助栈，每次压入后，比较辅助栈的栈顶元素和pop序列的首元素是否相等，相等的话就推出pop序列的首元素和辅助栈的栈顶元素，若最后辅助栈为空，则push序列可以对应于pop序列。
 
-[面试题32：从上往下打印二叉树](https://github.com/Einstellung/AlgorithmByPython/blob/master/Target%20Offer/%E4%BB%8E%E4%B8%8A%E5%BE%80%E4%B8%8B%E6%89%93%E5%8D%B0%E4%BA%8C%E5%8F%89%E6%A0%91.py)：引入一个队列即可。推广：有向图的广度优先遍历也是基于队列的。[题目二：分行从上到下打印二叉树](https://github.com/Einstellung/AlgorithmByPython/blob/master/Target%20Offer/%E5%88%86%E8%A1%8C%E4%BB%8E%E4%B8%8A%E5%88%B0%E4%B8%8B%E6%89%93%E5%8D%B0%E4%BA%8C%E5%8F%89%E6%A0%91.py)
+[面试题32：从上往下打印二叉树](https://github.com/Einstellung/AlgorithmByPython/blob/master/Target%20Offer/%E4%BB%8E%E4%B8%8A%E5%BE%80%E4%B8%8B%E6%89%93%E5%8D%B0%E4%BA%8C%E5%8F%89%E6%A0%91.py)：引入一个队列即可。推广：有向图的广度优先遍历也是基于队列的。[题目二：分行从上到下打印二叉树](https://github.com/Einstellung/AlgorithmByPython/blob/master/Target%20Offer/%E5%88%86%E8%A1%8C%E4%BB%8E%E4%B8%8A%E5%88%B0%E4%B8%8B%E6%89%93%E5%8D%B0%E4%BA%8C%E5%8F%89%E6%A0%91.py) [题目三：按之字形顺序打印二叉树](https://github.com/Jack-Lee-Hiter/AlgorithmsByPython/blob/master/Target%20Offer/%E6%8C%89%E4%B9%8B%E5%AD%97%E5%BD%A2%E9%A1%BA%E5%BA%8F%E6%89%93%E5%8D%B0%E4%BA%8C%E5%8F%89%E6%A0%91.py)：按之字形顺序打印二叉树需要两个栈。我们在打印某一行节点时，拔下一层的子节点保存到相应的栈里。如果当前打印的奇数层，则先保存左子节点再保存右子节点到第一个栈里；如果当前打印的是偶数层，则先保存右子节点再保存左子节点到第二个栈里。
 
 [面试题33：二叉搜索树的后续遍历序列](https://github.com/Einstellung/AlgorithmByPython/blob/master/Target%20Offer/%E4%BA%8C%E5%8F%89%E6%90%9C%E7%B4%A2%E6%A0%91%E7%9A%84%E5%90%8E%E7%BB%AD%E9%81%8D%E5%8E%86%E5%BA%8F%E5%88%97.py)：根据后续遍历的性质，尾元素必定是树的根，同时小于尾元素的值是左子树，大于尾元素的值为右子树，且序列前半部分均小于尾元素，后半部分均大于尾元素（如果同时存在左右子树的话），可以将序列划分左子树序列和右子树序列，然后递归比较师妹每一段均满足此性质。可以减少递归深度的办法：某段的元素个数如果<=3，则返回True；某整段的最小元素不小于尾元素或者整段的最大元素不大于尾元素，说明仅有左子树或者右子树，返回True。
 
@@ -245,8 +245,6 @@
 [面试题50：树中两个节点的最低公共祖先](https://github.com/Jack-Lee-Hiter/AlgorithmsByPython/blob/master/Target%20Offer/%E4%BA%8C%E5%8F%89%E6%A0%91%E7%9A%84%E6%9C%80%E4%BD%8E%E5%85%AC%E5%85%B1%E7%A5%96%E5%85%88.py)：首先来看比较简单的情况--[二叉搜索树的最低公共祖先](https://github.com/Jack-Lee-Hiter/AlgorithmsByPython/blob/master/Target%20Offer/%E4%BA%8C%E5%8F%89%E6%90%9C%E7%B4%A2%E6%A0%91%E7%9A%84%E6%9C%80%E4%BD%8E%E5%85%AC%E5%85%B1%E7%A5%96%E5%85%88.py)，对于二叉搜索树而言，每个节点的左子节点都小于这个数，右子节点都大于这个数，因此，我们比较当前节点和需要比较的结点m，n的大小，如果当前节点的值均大于m，n，则在当前节点的左子树继续操作，如果当前节点均小于m，n，则在当前节点的右子树继续操作，反之，则当前结点是最小公共祖先。而对于普通的二叉树而言，我们如果希望找到两个结点的最低公共祖先，那么我们可以先从树的根节点开始，找到根节点到结点m和结点n的路径，这时候我们就有两个List或者两个链表，然后就像前面题中遇到的寻找两个链表的公共结点一样，从后往前遍历两个List找到最靠后的第一个公共结点即可。
 
 [面试题60：把二叉树打印成多行](https://github.com/Jack-Lee-Hiter/AlgorithmsByPython/blob/master/Target%20Offer/%E6%8A%8A%E4%BA%8C%E5%8F%89%E6%A0%91%E6%89%93%E5%8D%B0%E6%88%90%E5%A4%9A%E8%A1%8C.py)：引入两个队列。首先把当前层的节点存入到一个队列queue1中，然后遍历当前队列queue1，在遍历的过程中，如果节点有左子树或右子树，依次存入另一个队列queue2。然后遍历队列queue2，如此往复。
-
-[面试题61：按之字形顺序打印二叉树](https://github.com/Jack-Lee-Hiter/AlgorithmsByPython/blob/master/Target%20Offer/%E6%8C%89%E4%B9%8B%E5%AD%97%E5%BD%A2%E9%A1%BA%E5%BA%8F%E6%89%93%E5%8D%B0%E4%BA%8C%E5%8F%89%E6%A0%91.py)：按之字形顺序打印二叉树需要两个栈。我们在打印某一行节点时，拔下一层的子节点保存到相应的栈里。如果当前打印的奇数层，则先保存左子节点再保存右子节点到第一个栈里；如果当前打印的是偶数层，则先保存右子节点再保存左子节点到第二个栈里。
 
 
 [面试题补充：三元组实现稀疏矩阵相乘](https://github.com/Jack-Lee-Hiter/AlgorithmsByPython/blob/master/Target%20Offer/multiSparse.py)
