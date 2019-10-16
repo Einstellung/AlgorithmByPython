@@ -244,8 +244,6 @@
 
 [面试题50：树中两个节点的最低公共祖先](https://github.com/Jack-Lee-Hiter/AlgorithmsByPython/blob/master/Target%20Offer/%E4%BA%8C%E5%8F%89%E6%A0%91%E7%9A%84%E6%9C%80%E4%BD%8E%E5%85%AC%E5%85%B1%E7%A5%96%E5%85%88.py)：首先来看比较简单的情况--[二叉搜索树的最低公共祖先](https://github.com/Jack-Lee-Hiter/AlgorithmsByPython/blob/master/Target%20Offer/%E4%BA%8C%E5%8F%89%E6%90%9C%E7%B4%A2%E6%A0%91%E7%9A%84%E6%9C%80%E4%BD%8E%E5%85%AC%E5%85%B1%E7%A5%96%E5%85%88.py)，对于二叉搜索树而言，每个节点的左子节点都小于这个数，右子节点都大于这个数，因此，我们比较当前节点和需要比较的结点m，n的大小，如果当前节点的值均大于m，n，则在当前节点的左子树继续操作，如果当前节点均小于m，n，则在当前节点的右子树继续操作，反之，则当前结点是最小公共祖先。而对于普通的二叉树而言，我们如果希望找到两个结点的最低公共祖先，那么我们可以先从树的根节点开始，找到根节点到结点m和结点n的路径，这时候我们就有两个List或者两个链表，然后就像前面题中遇到的寻找两个链表的公共结点一样，从后往前遍历两个List找到最靠后的第一个公共结点即可。
 
-[面试题60：把二叉树打印成多行](https://github.com/Jack-Lee-Hiter/AlgorithmsByPython/blob/master/Target%20Offer/%E6%8A%8A%E4%BA%8C%E5%8F%89%E6%A0%91%E6%89%93%E5%8D%B0%E6%88%90%E5%A4%9A%E8%A1%8C.py)：引入两个队列。首先把当前层的节点存入到一个队列queue1中，然后遍历当前队列queue1，在遍历的过程中，如果节点有左子树或右子树，依次存入另一个队列queue2。然后遍历队列queue2，如此往复。
-
 
 [面试题补充：三元组实现稀疏矩阵相乘](https://github.com/Jack-Lee-Hiter/AlgorithmsByPython/blob/master/Target%20Offer/multiSparse.py)
 
