@@ -18,7 +18,7 @@ class Solution:
         
         while (rear - front) > 1:
             mid = (front + rear) // 2   # 二分法比较数组中间元素，之所以想到二分法是因为数组是有序的
-            if Array[mid] < Array[rear]:
+            if Array[front] > Array[mid]:
                 rear = mid
             if Array[front] < Array[mid]:
                 front = mid
